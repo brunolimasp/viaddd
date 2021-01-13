@@ -2,6 +2,12 @@ const express = require( 'express')
 const router = require ('./src/routers/Routers.js')
 const nunnjucks = require('nunjucks')
 const app = express()
+// const ddd = require('./src/controller/ddd.js')
+
+
+// app.get('/api', (req, res) => {
+//     res.send(a.localizar())
+//   })
 
 
 nunnjucks.configure('src/views', {
