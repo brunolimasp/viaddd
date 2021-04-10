@@ -1,23 +1,30 @@
 
 
-class Municipio{
-    constructor(ddd){
-        this.ddd = ddd
-    }
 
-    localizar() {
-        if (this.ddd == '13'){
-            return (JSON.stringify(["Peruíbe",
-                                    "Santos",
-                                    "São Vicente"]));
-        }else{
-            return `${this.ddd} Não Localizado`
+
+module.exports = {
+
+
+    class Municipio{
+        constructor(ddd){
+            this.ddd = ddd
         }
-   
+    
+        localizar() {
+            if (this.ddd == '13'){
+                return (JSON.stringify(["Peruíbe",
+                                        "Santos",
+                                        "São Vicente"]));
+            }else{
+                return `${this.ddd} Não Localizado`
+            }
+       
+        }
     }
+
+
+
 }
-
-
 
 
 
