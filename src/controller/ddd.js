@@ -1,3 +1,5 @@
+
+
 class Municipio{
     constructor(ddd){
         this.ddd = ddd
@@ -5,15 +7,20 @@ class Municipio{
 
     localizar() {
         if (this.ddd == '13'){
-            return (JSON.stringify({Estado: "São Paulo", 
-                                    cidade01:"Santos",
-                                    cidade02:"São Vicente"}));
+            return (JSON.stringify(["Peruíbe",
+                                    "Santos",
+                                    "São Vicente"]));
         }else{
             return `${this.ddd} Não Localizado`
         }
    
     }
 }
+
+
+
+
+
 
 
 

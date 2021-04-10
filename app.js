@@ -20,9 +20,9 @@ nunnjucks.configure('src/views', {
 app.set('view engine', '.njk'); 
 
  
-app.use('/', (req,res)=>{
-    res.render('index')
-})
+// app.use('/', (req,res)=>{
+//     res.render('index')
+// })
 
 
 
