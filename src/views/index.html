@@ -16,63 +16,99 @@
 
 <body>
 
-  <nav class="navbar bg-primary navbar-expand-lg navbar-light">
-    <div class="p-4">
+  <div class="jumbotron bg-primary p-5 border-bottom border-light">
+
+    <div class="display-4">
+
       <a class="navbar-brand " href="/">
         <h1 class="text-white">Via DDD</h1>
       </a>
     </div>
-  </nav>
-  <div class="container-fluid">
 
-    <p>
-      Procurando um webservice gratuito e de alto desempenho para consultar Códigos de Endereçamento Postal (CEP) do
-      Brasil? Utilize o serviço, melhore a qualidade de suas aplicações web e colabore para manter esta base de dados
-      atualizada.
-    </p>
-    <h2>
-      Acessando o webservice de DDD
-    </h2>
 
-    <p>
-      Para acessar o webservice, um CEP no formato de {8} dígitos deve ser fornecido, por exemplo: "01001000".
-      Após o CEP, deve ser fornecido o tipo de retorno desejado, que deve ser "json", "xml", "piped" ou "querty".
-    </p>
+    <p class="lead">Este é um simples componente jumbotron para chamar mais atenção a um determinado conteúdo ou
+      informação.</p>
+    <hr class="my-4">
+  </div>
 
-    <p>
-      Exemplo de pesquisa por CEP:
-      viacep.com.br/ws/01001000/json/
-    </p>
+  <div class="container">
+    <div class="mt-5 ">
+      <p>
+        Procurando um webservice gratuito e de alto desempenho para consultar Códigos de Endereçamento Postal (CEP) do
+        Brasil? Utilize o serviço, melhore a qualidade de suas aplicações web e colabore para manter esta base de dados
+        atualizada.
+      </p>
+      <h2 class="text-primary">
+        Acessando o webservice de DDD
+      </h2>
+      <hr class="my-1 w-55">
+      <p>
+        Para acessar o webservice, um CEP no formato de {8} dígitos deve ser fornecido, por exemplo: "01001000".
+        Após o CEP, deve ser fornecido o tipo de retorno desejado, que deve ser "json", "xml", "piped" ou "querty".
+      </p>
+      <p>
+        Exemplo de pesquisa por CEP:
+        viacep.com.br/ws/01001000/json/
+      </p>
+      <h2 class="text-primary">
+        Validação do DDD
+      </h2>
+      <hr class="my-1 w-55">
+      <p>
+        Quando consultado um CEP de formato inválido, por exemplo: "950100100" (9 dígitos), "95010A10" (alfanumérico),
+        "95010 10" (espaço), o código de retorno da consulta será um 400 (Bad Request). Antes de acessar o webservice,
+        valide o formato do CEP e certifique-se que o mesmo possua {8} dígitos. Exemplo de como validar o formato do CEP
+        em javascript está disponível nos exemplos abaixo.
+      </p>
+      <p>
+        Quando consultado um CEP de formato válido, porém inexistente, por exemplo: "99999999", o retorno conterá um
+        valor
+        de "erro" igual a "true". Isso significa que o CEP consultado não foi encontrado na base de dados. Veja como
+        manipular este "erro" em javascript nos exemplos abaixo.
+      </p>
+      <h2 class="text-primary">
+        Formatos de Retorno
+      </h2>
+      <hr class="my-1 w-55">
+      <p>Veja exemplos de acesso ao webservice e os diferentes tipos de retorno:</p>
 
-    <h2>
-      Validação do DDD
-    </h2>
-    <p>
-      Quando consultado um CEP de formato inválido, por exemplo: "950100100" (9 dígitos), "95010A10" (alfanumérico),
-      "95010 10" (espaço), o código de retorno da consulta será um 400 (Bad Request). Antes de acessar o webservice,
-      valide o formato do CEP e certifique-se que o mesmo possua {8} dígitos. Exemplo de como validar o formato do CEP
-      em javascript está disponível nos exemplos abaixo.
-    </p>
-    <p>
-      Quando consultado um CEP de formato válido, porém inexistente, por exemplo: "99999999", o retorno conterá um valor
-      de "erro" igual a "true". Isso significa que o CEP consultado não foi encontrado na base de dados. Veja como
-      manipular este "erro" em javascript nos exemplos abaixo.
-    </p>
-    <h2>
-      Formatos de Retorno
-    </h2>
-    <p>Veja exemplos de acesso ao webservice e os diferentes tipos de retorno:</p>
-
-    <div class="card">
-      <div class="card-body">
-        JSON
-        URL: viacep.com.br/ws/01001000/json/
-        UNICODE: viacep.com.br/ws/01001000/json/unicode/
-
-        
-
+      <div class="card">
+        <div class="card-body p-4">
+          <h2>JSON</h2>
+          <br>
+          <span>URL:</span><a href="//viaddd" target="_blank"> viacep.com.br/ws/<span class="cep">01001000</span>/<span
+              class="retorno">json</span>/</a>
+          <br>
+          <span>UNICODE:</span><a href="//viaddd" target="_blank"> viacep.com.br/ws/<span
+              class="cep">01001000</span>/<span class="retorno">json</span>/</a>
+        </div>
+        <div class="container">
+          <pre class="bg-light mt-4 ">
+            <code>
+              {
+                "DDD":13,
+                "Municipios":["Peruibe", "São vicente", "Santos"]
+              }
+            </code>
+          </pre>
+        </div>
       </div>
     </div>
+
+  </div>
+  </div>
+  <div clas>
+
+  </div>
+
+  <div class="jumbotron bg-light p-5 border-top border-primary mt-5">
+
+    <a class="navbar-brand " href="/">
+      <h1 class="display-4 ">Via DDD</h1>
+    </a>
+    <p class="lead">Este é um simples componente jumbotron para chamar mais atenção a um determinado conteúdo ou
+      informação.</p>
+
   </div>
 </body>
 
