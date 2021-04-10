@@ -3,8 +3,7 @@
 
 
 exports.Index = async(req,res) => {
-    
-    
+    res.render('index')
 }
 
 

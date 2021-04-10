@@ -17,12 +17,9 @@ nunnjucks.configure('src/views', {
 })
 
 
-app.set('view engine', '.njk'); 
+app.set('view engine', '.html'); 
 
  
-// app.use('/', (req,res)=>{
-//     res.render('index')
-// })
 
 
 
