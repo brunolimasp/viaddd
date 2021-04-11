@@ -1,0 +1,65 @@
+<div id="invalido" class="card p-4">
+  <h2 id="validacaododdd" class="text-primary">
+    Validação do DDD
+  </h2>
+  <br><br>
+  <h5 id="formatoinvalido" class="text-primary">
+    Formato inválido
+  </h5>
+  <p class="lead">
+    Quando consultado um DDD de formato inválido, por exemplo: "A13" (alfanumérico),"0 13" (espaço), o código de
+    retorno da consulta será um 400 (Bad Request). Antes de acessar o webservice, valide o formato do DDD e
+    certifique-se que o mesmo possua {2} "13" ou {3} "013" dígitos.
+  </p>
+  <p class="lead">Exemplo de formato inválido do DDD no exemplo abaixo.</p>
+
+  <div class="card">
+    <div class="card-body p-4">
+      <h2>JSON</h2>
+      <br>
+      <span class="lead">URL: </span><a href="//viaddd" target="_blank" class="lead"> viaddd.com.br/api/<span class="cep">A13</span></a>
+      <br>
+      <br>
+      <span class="lead">URL: </span><a href="//viaddd" target="_blank" class="lead"> viaddd.com.br/api/<span class="cep">A13</span></a>
+    </div>
+    <div class="container">
+      <pre class="bg-light mt-4 ">
+        <code>
+          {
+            "erro":"Formato inválido!"
+          }
+        </code>
+      </pre>
+    </div>
+  </div>
+  <br><br>
+  <h5 id="dadoinexistente" class="text-primary">
+    Dado inexistente
+  </h5>
+  <p class="lead">
+    Quando consultado um DDD de formato válido, porém inexistente, por exemplo: "100" ou "999", o retorno conterá
+    um
+    valor de "erro". Isso significa que o DDD consultado não foi encontrado na base de dados. Veja como
+    manipular este "erro" em javascript nos exemplos abaixo.
+  </p>
+  <p class="lead">Exemplo de formato inválido do DDD no exemplo abaixo.</p>
+  <div class="card">
+    <div class="card-body p-4">
+      <h2>JSON</h2>
+      <br>
+      <span class="lead">URL: </span><a href="//viaddd" target="_blank" class="lead"> viaddd.com.br/api/<span class="cep">999</span></a>
+      <br>
+      <br>
+      <div class="container">
+        <pre class="bg-light mt-4 ">
+        <code>
+          {
+            "erro":"DDD informado não encontrado na base de dados!"
+          }
+        </code>
+      </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
