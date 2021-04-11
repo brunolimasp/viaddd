@@ -1,76 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS only -->
+  <meta name="description" content="Webservice gratuito para pesquisa de DDD para o formato JSON.">
+  <link rel="stylesheet" href="/style.css">
+  <!--  -------- ICONES FORK AWESOME --------  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+    integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-  <title>Document</title>
+
+  <title>ViaDDD</title>
 </head>
 
 <body>
-
-  <div class="jumbotron bg-primary p-5 border-bottom border-light">
-
-    <div class="display-4">
-
-      <a class="navbar-brand " href="/">
-        <h1 class="text-white">Via DDD</h1>
-      </a>
+  <div class="jumbotron bg-primary p-2 border-bottom border-light">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center"">
+          <div >
+            <a class=" navbar-brand" href="/">
+          <img src="/DDD-white.png" alt="ddd" style="width: 370px;">
+          </a>
+          <h2 class="lead text-white center text-center" style="margin-left: -15px;"><strong>De todos para
+              todos!</strong></h2>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8">
+        <div class="border border-white"
+          style="height: 220px;background: #b1a8a8;display: flex;justify-content: center;align-items: center;">
+          <h1>2000x200</h1>
+        </div>
+      </div>
     </div>
-
-
-    <p class="lead">Este é um simples componente jumbotron para chamar mais atenção a um determinado conteúdo ou
-      informação.</p>
-    <hr class="my-4">
+  </div>
   </div>
 
   <div class="container">
-    <div class="mt-5 ">
-      <p>
-        Procurando um webservice gratuito e de alto desempenho para consultar Códigos de Endereçamento Postal (CEP) do
-        Brasil? Utilize o serviço, melhore a qualidade de suas aplicações web e colabore para manter esta base de dados
-        atualizada.
-      </p>
+    <div class="mt-5">
+      <div id="Apresentacao" class="card p-4">
+        <div>
+          <p>
+            Já pensou em consultar Municipios pelo código da operado (DDD) do
+            Brasil? Utilize o nosso <a href="https://pt.wikipedia.org/wiki/Web_service">Webservice</a> e de a melhor
+            qualidade as suas aplicações web!
+          </p>
+
+
+          <h2 class="text-primary">Documentação de Referêcia da API ViaDDD</h2>
+          <div class="card">
+            <div class="card-body p-4">
+              <h5><a href="#formatoderetorno">Formato de Retorno </a></h5>
+              <ul>
+                <ol><a href="#formatovalido">Formato válido</a></ol>
+              </ul>
+
+              <h5><a href="#validacaododdd">Validação do DDD</a></h5>
+              <ul>
+                <ol><a href="#formatoinvalido">Formato inválido</a></ol>
+                <ol><a href="#dadoinexistente">Dado inexistente</a></ol>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <!------------------------------------------------------------------------------------------------------------------->
+
+    <div id="comoacessar" class="card p-4">
       <h2 class="text-primary">
-        Acessando o webservice de DDD
+        Como acessar o webservice do ViaDDD?
       </h2>
-      <hr class="my-1 w-55">
+
       <p>
-        Para acessar o webservice, um CEP no formato de {8} dígitos deve ser fornecido, por exemplo: "01001000".
-        Após o CEP, deve ser fornecido o tipo de retorno desejado, que deve ser "json", "xml", "piped" ou "querty".
+        Para ter a acesso ao serviço basta você informar o DDD no formato de {3} dígitos, por exemplo: "013".
+        Após informado corretamente você terá o retorno em formato "<a
+          href="https://pt.wikipedia.org/wiki/JSON">JSON</a>".
       </p>
       <p>
-        Exemplo de pesquisa por CEP:
-        viacep.com.br/ws/01001000/json/
+        Exemplo de pesquisa por DDD:
+        viaddd.com.br/api/013
       </p>
-      <h2 class="text-primary">
-        Validação do DDD
+    </div>
+    <br><br>
+    <!------------------------------------------------------------------------------------------------------------------->
+    <div id="valido" class="card p-4">
+      <h2 id="formatoderetorno" class="text-primary">
+        Formato de Retorno
       </h2>
-      <hr class="my-1 w-55">
-      <p>
-        Quando consultado um CEP de formato inválido, por exemplo: "950100100" (9 dígitos), "95010A10" (alfanumérico),
-        "95010 10" (espaço), o código de retorno da consulta será um 400 (Bad Request). Antes de acessar o webservice,
-        valide o formato do CEP e certifique-se que o mesmo possua {8} dígitos. Exemplo de como validar o formato do CEP
-        em javascript está disponível nos exemplos abaixo.
-      </p>
-      <p>
-        Quando consultado um CEP de formato válido, porém inexistente, por exemplo: "99999999", o retorno conterá um
-        valor
-        de "erro" igual a "true". Isso significa que o CEP consultado não foi encontrado na base de dados. Veja como
-        manipular este "erro" em javascript nos exemplos abaixo.
-      </p>
-      <h2 class="text-primary">
-        Formatos de Retorno
-      </h2>
-      <hr class="my-1 w-55">
-      <p>Veja exemplos de acesso ao webservice e os diferentes tipos de retorno:</p>
+      <br><br>
+      <h5 id="formatovalido" class="text-primary">
+        Formato válido
+      </h5>
+      <p>Veja exemplo de acesso ao webservice e o seu retorno:</p>
 
       <div class="card">
         <div class="card-body p-4">
@@ -95,21 +125,158 @@
       </div>
     </div>
 
-  </div>
-  </div>
-  <div clas>
+    <br><br>
+    <!--------------------------------------------------------------------------------------------------------------->
+    <div id="invalido" class="card p-4">
+      <h2 id="validacaododdd" class="text-primary">
+        Validação do DDD
+      </h2>
+      <br><br>
+      <h5 id="formatoinvalido" class="text-primary">
+        Formato inválido
+      </h5>
+      <p>
+        Quando consultado um DDD de formato inválido, por exemplo: "A13" (alfanumérico),"0 13" (espaço), o código de
+        retorno da consulta será um 400 (Bad Request). Antes de acessar o webservice, valide o formato do DDD e
+        certifique-se que o mesmo possua {2} "13" ou {3} "013" dígitos.
+      </p>
+      <p>Exemplo de formato inválido do DDD no exemplo abaixo.</p>
 
+      <div class="card">
+        <div class="card-body p-4">
+          <h2>JSON</h2>
+          <br>
+          <span>URL: </span><a href="//viaddd" target="_blank"> viaddd.com.br/api/<span class="cep">A13</span></a>
+          <br>
+          <br>
+          <span>URL: </span><a href="//viaddd" target="_blank"> viaddd.com.br/api/<span class="cep">A13</span></a>
+        </div>
+        <div class="container">
+          <pre class="bg-light mt-4 ">
+            <code>
+              {
+                "erro":"Formato inválido!"
+              }
+            </code>
+          </pre>
+        </div>
+      </div>
+      <br><br>
+      <h5 id="dadoinexistente" class="text-primary">
+        Dado inexistente
+      </h5>
+      <p>
+        Quando consultado um DDD de formato válido, porém inexistente, por exemplo: "100" ou "999", o retorno conterá
+        um
+        valor de "erro". Isso significa que o DDD consultado não foi encontrado na base de dados. Veja como
+        manipular este "erro" em javascript nos exemplos abaixo.
+      </p>
+      <p>Exemplo de formato inválido do DDD no exemplo abaixo.</p>
+      <div class="card">
+        <div class="card-body p-4">
+          <h2>JSON</h2>
+          <br>
+          <span>URL: </span><a href="//viaddd" target="_blank"> viaddd.com.br/api/<span class="cep">999</span></a>
+          <br>
+          <br>
+          <div class="container">
+            <pre class="bg-light mt-4 ">
+            <code>
+              {
+                "erro":"DDD informado não encontrado na base de dados!"
+              }
+            </code>
+          </pre>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="jumbotron bg-light p-5 border-top border-primary mt-5">
 
-    <a class="navbar-brand " href="/">
-      <h1 class="display-4 ">Via DDD</h1>
-    </a>
-    <p class="lead">Este é um simples componente jumbotron para chamar mais atenção a um determinado conteúdo ou
-      informação.</p>
+  <div class="footer">
+    <div class="jumbotron  bg-light p-2 border-top border-primary mt-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-center">
+            <div>
+              <a class=" navbar-brand" href="/">
+                <img src="/DDD-blue.png" alt="ddd" style="width: 370px;">
+              </a>
+              <h2 class="lead text-white center text-center" style="color: #0d6efd!important; margin-left: -15px;"><strong>De todos para todos!</strong></h2>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-4 d-flex flex-column justify-content-end">
+            <div class="border border-white">
+              <div class="p-1 text-center">
+                <!-- <a class="text-primary fa-2x mr-2" target="_blank" href="https://www.facebook.com/rolofeiraonline"><i
+                  class="fa fa-facebook-official" aria-hidden="true"></i></a> -->
+                <!-- <a class="text-primary fa-2x mr-2" target="_blank"
+                href="https://chat.whatsapp.com/F4IlBSHeTvzKUFbpYZd8FG"><i class="fa fa-whatsapp"
+                  aria-hidden="true"></i></a> -->
+                <a class="text-primary fa-2x mr-2" target="_blank" href="https://www.instagram.com/?hl=pt-br"><i
+                    class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a id="github" class="text-primary fa-2x mr-2" data-toggle="modal" href="#github"><i class="fa fa-github-alt"
+                    aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="modal fade" id="github">
+              <div class="modal-dialog">
+                  <div class="modal-content ">
+                      <div class="modal-header">
+                          <h4 class="modal-title">GitHub</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      </div>
+                      <div class="modal-body">
+                          
+                          <div class="container">
+          
+                              <div class="row">
+                                <div class="col-lg-6" style="text-align: center;">
+                                  <a href="https://github.com/brunoaugustosp" target="_blank" rel="noopener noreferrer">
+                                  <img src="https://avatars0.githubusercontent.com/u/54317589?s=400&u=5883d633da9d90f6a918ade5a99157fe743ef31a&v=4"
+                                    class="bd-placeholder-img rounded-circle" width="140" height="140" focusable="false" role="img"
+                                    aria-label="Placeholder: 140x140">
+                                  </a>
+                                  <p><strong>Bruno Augusto</strong><p>
+                                  <small>Desenvolvedor e analista de sistemas com expertise em projetos web e mobile / Administrador de banco de dados SQL / Social Media</small>
+                                </div>
+                                
+          
+                                <div class="col-lg-6" style="text-align: center;">
+                                  <a href="https://github.com/lsferreira934" target="_blank" rel="noopener noreferrer">
+                                  <img src="https://avatars2.githubusercontent.com/u/56802012?s=400&u=9b58854874588c702be31e1cc92e2f7b4dc28b28&v=4"
+                                    class="bd-placeholder-img rounded-circle" width="140" height="140" focusable="false" role="img"
+                                    aria-label="Placeholder: 140x140">
+                                    </a>
+                                    <p><strong>Leandro</strong><p>
+                                  <small>Desenvolvedor e analista de sistemas com conhecimento em desenvolvimento Frontend / Fullstack</small>
+                                </div>
+                            
+                              </div>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+            <div class="text-center text-primary">
+              Via DDD © 2021
+            </div>
+            <br>
+          </div>
+          <div class="col-12 col-sm-12 col-md-4">
 
-  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      $("#github").off().click(function(){
+        console.log('ola')
+      })
+    </script>
 </body>
 
 </html>
