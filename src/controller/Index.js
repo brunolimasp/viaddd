@@ -12,10 +12,10 @@ exports.ApiDDD = async(req, res) => {
 
   const ddd = Number(req.params.codigo)
 
-    res.json(Localizar.merda)
+  
     
 
-    // res.json((Localizar.localizar(ddd)))
+    res.json((Localizar.localizar(ddd)))
 }
 
 
