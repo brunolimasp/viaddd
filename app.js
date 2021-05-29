@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require( 'express')
 const router = require ('./src/routers/Routers.js')
 const nunjucks = require('nunjucks')
@@ -15,7 +16,7 @@ app.use(router)
 
 app.set('view engine', '.html'); 
 
-const port = 3030
+const port = process.env.PORT || 3030
 
 app.listen(port,()=>{
     try {
