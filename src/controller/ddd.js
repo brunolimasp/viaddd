@@ -1700,7 +1700,8 @@ return data
 
 
     }else{
-        return `${this.ddd} Não Localizado`
+        let res = `{"erro": "DDD informado não encontrado na base de dados!"}`
+        return JSON.parse(res)
     }
   }
 
