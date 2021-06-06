@@ -4,8 +4,16 @@ exports.Index = async(req,res) => {
     res.render('index')
 }
 
-exports.DonatePicpay = async(req,res) => {
-  res.render('donatePicpay')
+exports.Politica = async(req,res) => {
+  res.render('politica')
+}
+
+exports.Sobre = async(req,res) => {
+  res.render('sobre')
+}
+
+exports.Historia = async(req,res) => {
+  res.render('historia')
 }
 
 exports.ApiDDD = async(req, res) => {
