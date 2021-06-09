@@ -12,7 +12,7 @@
     <div class="card-body p-4">
       <h2>JQUERY</h2>
       <br>
-      <span class="lead">URL: </span><a href="https://viaddd.com.br/api/13" target="_blank" class="lead">viaddd.com.br/api/<span
+      <span class="lead">URL: </span><a href="https://viaddd.com.br/api/ddd/13" target="_blank" class="lead">viaddd.com.br/api/ddd<span
           class="ddd">013</span></a>
     </div>
     <div class="container">
@@ -20,7 +20,7 @@
           <code>
             $.ajax({
               type: "GET",
-              url: "http://viaddd.com.br/api/" + "013",
+              url: "http://viaddd.com.br/api/ddd/" + "013",
               dataType: "json",
               success: function (response) {
                   console.log(response)
@@ -41,13 +41,13 @@
     <div class="card-body p-4">
       <h2>JavaScript</h2>
       <br>
-      <span class="lead">URL: </span><a href="https://viaddd.com.br/api/13" target="_blank" class="lead">viaddd.com.br/api/<span
+      <span class="lead">URL: </span><a href="https://viaddd.com.br/api/ddd/13" target="_blank" class="lead">viaddd.com.br/api/ddd/<span
           class="ddd">013</span></a>
     </div>
     <div class="container">
       <pre class="bg-light mt-4 ">
           <code>
-          fetch("http://viaddd.com.br/api/" + "013")
+          fetch("http://viaddd.com.br/api/ddd/" + "013")
             .then((res) => { return res.json(); })
             .then((data) => { console.log(data) })
             .catch((err) => { console.log(err) })
@@ -61,7 +61,7 @@
     <div class="card-body p-4">
       <h2>JavaScript (async await + try/catch)</h2>
       <br>
-      <span class="lead">URL: </span><a href="https://viaddd.com.br/api/13" target="_blank" class="lead">viaddd.com.br/api/<span
+      <span class="lead">URL: </span><a href="https://viaddd.com.br/api/ddd/13" target="_blank" class="lead">viaddd.com.br/api/ddd/<span
           class="ddd">013</span></a>
     </div>
     <div class="container">
@@ -69,7 +69,7 @@
         <code>
           async function getDDD() {
             try{
-              const response = await fetch(`http://viaddd.com.br/api/${013}`)
+              const response = await fetch(`http://viaddd.com.br/api/ddd/${013}`)
               const data = await response.json()
               console.log(data)
             }catch(err){
