@@ -8,4 +8,9 @@ router.get('/politica', ControllerIndex.Politica)
 router.get('/sobre', ControllerIndex.Sobre)
 router.get('/historia', ControllerIndex.Historia)
 
+
+router.get('/:estado', ControllerIndex.EstadosService)
+router.get('/:estados/:ddd', ControllerIndex.DDDCidade)
+
+
 module.exports = router
