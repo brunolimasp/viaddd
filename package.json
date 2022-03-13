@@ -4,7 +4,6 @@
   "description": "Api para localização de DDD",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm install -g npm && npm cache verify && npm cache clean --force && npm cache verify && node -v && npm -v && nodemon app.js",
     "git": "git stage . && git commit -a -m update && git push"
   },
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/brunoaugustosp/viaddd#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.7",

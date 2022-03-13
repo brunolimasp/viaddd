@@ -1,1193 +1,1148 @@
+const api = require("../api/brasilapi");
 
-
-function localizar(ddd) {
-
-    if (ddd == 13){
-
-      let data = {
-        "DDD":13,
-        "Estado":"São Paulo",
-        "Municipios":
-          [
-            "Bertioga",
-            "Cubatão",
-            "Iguape",
-            "Itariri",
-            "Miracatu",
-            "Pedro de Toledo",
-            "Sete Barras",
-            "Cajati", 
-            "Eldorado",
-            "Ilha Comprida",
-            "Jacupiranga",
-            "Cananeia",
-            "Juquia",
-            "Pariquera-Açu",
-            "Registro",
-            "Guarujá",
-            "Mongaguá",
-            "Peruíbe",
-            "Praia Grande",
-            "Santos",
-            "São Vicente"
-          ]
-      }
-      return data 
-      } else if (ddd == 11){
-          let data = {
-            "DDD":11,
-            "Estado":"São Paulo",
-            "Municipios":
-              [
-                "Aluminio",
-                "Aracariguama",
-                "Aruja",
-                "Atibaia",
-                "Barueri",
-                "Biritiba-Mirim",
-                "Bom Jesus dos Perdoes",
-                "Braganca Paulista",
-                "Cabreuva",
-                "Caieiras",
-                "Cajamar",
-                "Campo Limpo Paulista",
-                "Carapicuiba",
-                "Ciabyte",
-                "Cotia",
-                "Diadema",
-                "Embu",
-                "Embu-Guaçu",
-                "Ferraz de Vasconcelos",
-                "Francisco Morato",
-                "Franco da Rocha",
-                "Guararema",
-                "Guarulhos",
-                "Igarata",
-                "Itapecerica da Serra",
-                "Itapevi",
-                "Itaquaquecetuba",
-                "Itatiba",
-                "Itu",
-                "Itupeva",
-                "Jandira",
-                "Jarinu",
-                "Joanópolis",
-                "Jundiai",
-                "Juquitiba",
-                "Mairinque",
-                "Mairipora",
-                "Maua",
-                "Moji das Cruzes",
-                "Morungaba",
-                "Nazare Paulista",
-                "Osasco",
-                "Pedra Bela",
-                "Pinhalzinho",
-                "Piracaia",
-                "Pirapora do Bom Jesus",
-                "Poa",
-                "Ribeirao Pires",
-                "Rio Grande da Serra",
-                "Salesópolis",
-                "Salto",
-                "Santa Isabel",
-                "Santana de Parnaiba",
-                "Santo Andre",
-                "São Bernardo do Campo",
-                "São Caetano do Sul",
-                "São Lourenço da Serra",
-                "São Paulo",
-                "São Roque",
-                "Suzano",
-                "Taboao da Serra",
-                "Tuiuti",
-                "Vargem",
-                "Vargem Grande Paulista",
-                "Varzea Paulista"
-              ]  
-          }
-          return data
-        } else if (ddd == 12){
-            let data = {
-              "DDD":12,
-              "Estado":"São Paulo",
-              "Municipios":
-                [
-                "Aparecida",
-                "Arapei",
-                "Areias",
-                "Bananal",
-                "Cacapava",
-                "Cachoeira Paulista",
-                "Campos do Jordão",
-                "Canas",
-                "Caraguatatuba",
-                "Cruzeiro",
-                "Cunha",
-                "Guaratingueta",
-                "Ilhabela",
-                "Jacarei",
-                "Jambeiro",
-                "Lagoinha",
-                "Lavrinhas",
-                "Lorena",
-                "Monteiro Lobato",
-                "Natividade da Serra",
-                "Paraibuna",
-                "Pindamonhangaba",
-                "Piquete",
-                "Potim",
-                "Queluz",
-                "Redenção da Serra",
-                "Roseira",
-                "Santa Branca",
-                "Santo Antônio do Pinhal",
-                "São Bento do Sapucai",
-                "São José do Barreiro",
-                "São José dos Campos",
-                "São Luis do Paraitinga",
-                "São Sebastião",
-                "Silveiras",
-                "Taubate",
-                "Tremembe",
-                "Ubatuba"
-                ]  
-            }
-            return data
-          } else if (ddd == 14){
-            let data = {
-              "DDD":14,
-              "Estado":"São Paulo",
-              "Municipios":
-                [
-                    "Águas de Santa Barbara",
-                    "Agudos",
-                    "Alvaro de Carvalho",
-                    "Alvinlândia",
-                    "Anhembi",
-                    "Arandu",
-                    "Arco-Iris",
-                    "Arealva",
-                    "Areiópolis",
-                    "Avai",
-                    "Avare",
-                    "Balbinos",
-                    "Bariri",
-                    "Barra Bonita",
-                    "Bastos",
-                    "Bauru",
-                    "Bernardino de Campos",
-                    "Bocaina",
-                    "Bofete",
-                    "Boraceia",
-                    "Borebi",
-                    "Botucatu",
-                    "Brotas",
-                    "Cabralia Paulista",
-                    "Cafelândia",
-                    "Campos Novos Paulista",
-                    "Canitar",
-                    "Cerqueira Cesar",
-                    "Chavantes",
-                    "Conchas",
-                    "Coronel Macedo",
-                    "Dois Corregos",
-                    "Duartina",
-                    "Espirito Santo do Turvo",
-                    "Fartura",
-                    "Fernao",
-                    "Galia",
-                    "Garca",
-                    "Getulina",
-                    "Guaicara",
-                    "Guaimbe",
-                    "Guaranta",
-                    "Herculândia",
-                    "Iacanga",
-                    "Iacri",
-                    "Iaras",
-                    "Ibirarema",
-                    "Igaracu do Tiete",
-                    "Ipaussu",
-                    "Itai",
-                    "Itaju",
-                    "Itapui",
-                    "Itatinga",
-                    "Jau",
-                    "Julio Mesquita",
-                    "Lencois Paulista",
-                    "Lins",
-                    "Lucianópolis",
-                    "Lupercio",
-                    "Macatuba",
-                    "Manduri",
-                    "Marilia",
-                    "Mineiros do Tiete",
-                    "Ocauçu",
-                    "Oleo",
-                    "Oriente",
-                    "Oscar Bressane",
-                    "Ourinhos",
-                    "Paranapanema",
-                    "Pardinho",
-                    "Paulistania",
-                    "Pederneiras",
-                    "Pereiras",
-                    "Piraju",
-                    "Pirajui",
-                    "Piratininga",
-                    "Pompeia",
-                    "Pongai",
-                    "Pratania",
-                    "Presidente Alves",
-                    "Promissão",
-                    "Queiroz",
-                    "Quintana",
-                    "Reginópolis",
-                    "Ribeirao do Sul",
-                    "Sabino",
-                    "Salto Grande",
-                    "Santa Cruz do Rio Pardo",
-                    "São Manuel",
-                    "São Pedro do Turvo",
-                    "Sarutaia",
-                    "Taguai",
-                    "Taquarituba",
-                    "Tejupa",
-                    "Timburi",
-                    "Torrinha",
-                    "Tupa",
-                    "Ubirajara",
-                    "Uru",
-                    "Vera Cruz"
-        
-                ]  
-            }
-            return data 
-          } else if (ddd == 15){
-            let data = {
-              "DDD":15,
-              "Estado":"São Paulo",
-              "Municipios":
-                [
-                  "Alambari",
-                  "Angatuba",
-                  "Apiai",
-                  "Aracoiaba da Serra",
-                  "Barao de Antonina",
-                  "Barra do Chapeu",
-                  "Barra do Turvo",
-                  "Boituva",
-                  "Bom Sucesso de Itarare",
-                  "Buri",
-                  "Campina do Monte Alegre",
-                  "Capao Bonito",
-                  "Capela do Alto",
-                  "Cerquilho",
-                  "Cesario Lange",
-                  "Guapiara",
-                  "Guarei",
-                  "Ibiuna",
-                  "Ipero",
-                  "Iporanga",
-                  "Itabera",
-                  "Itaoca",
-                  "Itapetininga",
-                  "Itapeva",
-                  "Itapirapua Paulista",
-                  "Itaporanga",
-                  "Itarare",
-                  "Jumirim",
-                  "Laranjal Paulista",
-                  "Nova Campina",
-                  "Piedade",
-                  "Pilar do Sul",
-                  "Porangaba",
-                  "Porto Feliz",
-                  "Quadra",
-                  "Ribeira",
-                  "Ribeirao Branco",
-                  "Ribeirao Grande",
-                  "Riversul",
-                  "Salto de Pirapora",
-                  "São Miguel Arcanjo",
-                  "Sarapui",
-                  "Sorocaba",
-                  "Tapirai",
-                  "Taquarivai",
-                  "Tatui",
-                  "Tiete",
-                  "Torre de Pedra",
-                  "Votorantim"
-                ]  
-            }
-            return data 
-          } else if (ddd == 16){
-            let data = {
-              "DDD":16,
-              "Estado":"São Paulo",
-              "Municipios":
-                [
-                "Altinópolis",
-                "Americo Brasiliense",
-                "Aramina",
-                "Araraquara",
-                "Barrinha",
-                "Batatais",
-                "Boa Esperança do Sul",
-                "Borborema",
-                "Brodowski",
-                "Buritizal",
-                "Cajuru",
-                "Candido Rodrigues",
-                "Cassia dos Coqueiros",
-                "Cravinhos",
-                "Cristais Paulista",
-                "Dobrada",
-                "Dourado",
-                "Dumont",
-                "Fernando Prestes",
-                "Franca",
-                "Gaviao Peixoto",
-                "Guara",
-                "Guariba",
-                "Guatapara",
-                "Ibate",
-                "Ibitinga",
-                "Igarapava",
-                "Ipua",
-                "Itápolis",
-                "Itirapua",
-                "Ituverava",
-                "Jaboticabal",
-                "Jardinópolis",
-                "Jeriquara",
-                "Luis Antônio",
-                "Matao",
-                "Miguelópolis",
-                "Monte Alto",
-                "Morro Agudo",
-                "Motuca",
-                "Nova Europa",
-                "Nuporanga",
-                "Orlândia",
-                "Patrocinio Paulista",
-                "Pedregulho",
-                "Pitangueiras",
-                "Pontal",
-                "Pradópolis",
-                "Restinga",
-                "Ribeirao Bonito",
-                "Ribeirao Corrente",
-                "Ribeirao Preto",
-                "Rifaina",
-                "Rincao",
-                "Sales Oliveira",
-                "Santa Cruz da Esperança",
-                "Santa Ernestina",
-                "Santa Lucia",
-                "Santa Rosa de Viterbo",
-                "Santo Antônio da Alegria",
-                "São Carlos",
-                "São Joaquim da Barra",
-                "São José da Bela Vista",
-                "São Simão",
-                "Serra Azul",
-                "Serrana",
-                "Sertaozinho",
-                "Tabatinga",
-                "Taiaçu",
-                "Taiuva",
-                "Taquaral",
-                "Taquaritinga",
-                "Trabiju",
-                "Vista Alegre do Alto"
-        
-                ]  
-            }
-            return data
-          } else if (ddd == 17){
-            let data = {
-              "DDD":17,
-              "Estado":"São Paulo",
-              "Municipios":
-                [
-                "Adolfo",
-                "Altair",
-                "Alvares Florence",
-                "Americo de Campos",
-                "Aparecida D'oeste",
-                "Ariranha",
-                "Aspasia",
-                "Auriflama",
-                "Bady Bassitt",
-                "Balsamo",
-                "Barretos",
-                "Bebedouro",
-                "Cajobi",
-                "Cardoso",
-                "Catanduva",
-                "Catigua",
-                "Cedral",
-                "Colina",
-                "Colombia",
-                "Cosmorama",
-                "Dirce Reis",
-                "Dolcinópolis",
-                "Elisiario",
-                "Embauba",
-                "Estrela D'oeste",
-                "Fernandópolis",
-                "Floreal",
-                "Gastao Vidigal",
-                "General Salgado",
-                "Guaira",
-                "Guapiaçu",
-                "Guaraci",
-                "Guarani D'oeste",
-                "Guzolândia",
-                "Ibira",
-                "Icem",
-                "Indiapora",
-                "Ipigua",
-                "Irapua",
-                "Itajobi",
-                "Jaborandi",
-                "Jaci",
-                "Jales",
-                "José Bonifacio",
-                "Macaubal",
-                "Macedonia",
-                "Magda",
-                "Marapoama",
-                "Marinópolis",
-                "Mendonca",
-                "Meridiano",
-                "Mesópolis",
-                "Mira Estrela",
-                "Mirassol",
-                "Mirassolândia",
-                "Moncoes",
-                "Monte Aprazivel",
-                "Monte Azul Paulista",
-                "Neves Paulista",
-                "Nhandeara",
-                "Nipoa",
-                "Nova Alianca",
-                "Nova Canaã Paulista",
-                "Nova Castilho",
-                "Nova Granada",
-                "Nova Luzitania",
-                "Novais",
-                "Novo Horizonte",
-                "Olimpia",
-                "Onda Verde",
-                "Orindiuva",
-                "Ouroeste",
-                "Palestina",
-                "Palmares Paulista",
-                "Palmeira D'oeste",
-                "Paraíso",
-                "Paranapua",
-                "Parisi",
-                "Paulo de Faria",
-                "Pedranópolis",
-                "Pindorama",
-                "Pirangi",
-                "Poloni",
-                "Pontalinda",
-                "Pontes Gestal",
-                "Populina",
-                "Potirendaba",
-                "Riolândia",
-                "Rubineia",
-                "Sales",
-                "Santa Adelia",
-                "Santa Albertina",
-                "Santa Clara D'oeste",
-                "Santa Fe do Sul",
-                "Santa Rita D'oeste",
-                "Santa Salete",
-                "Santana da Ponte Pensa",
-                "São Francisco",
-                "São João das Duas Pontes",
-                "São João de Iracema",
-                "São José do Rio Preto",
-                "Sebastianopolis do Sul",
-                "Severinia",
-                "Tabapua",
-                "Tanabi",
-                "Terra Roxa",
-                "Três Fronteiras",
-                "Turmalina",
-                "Ubarana",
-                "Uchoa",
-                "União Paulista",
-                "Urania",
-                "Urupes",
-                "Valentim Gentil",
-                "Viradouro",
-                "Vitória Brasil",
-                "Votuporanga"
-        
-                ]  
-            }
-            return data
-          } else if (ddd == 18){
-            let data = {
-              "DDD":18,
-              "Estado":"São Paulo",
-              "Municipios":
-              [
-                "Adamantina",
-                "Alfredo Marcondes",
-                "Alto Alegre",
-                "Alvares Machado",
-                "Andradina",
-                "Anhumas",
-                "Aracatuba",
-                "Assis",
-                "Avanhandava",
-                "Barbosa",
-                "Bento de Abreu",
-                "Bilac",
-                "Birigui",
-                "Bora",
-                "Brauna",
-                "Brejo Alegre",
-                "Buritama",
-                "Caiabu",
-                "Caiua",
-                "Candido Mota",
-                "Castilho",
-                "Clementina",
-                "Coroados",
-                "Cruzalia",
-                "Dracena",
-                "Echapora",
-                "Emilianópolis",
-                "Estrela do Norte",
-                "Euclides da Cunha Paulista",
-                "Flora Rica",
-                "Florida Paulista",
-                "Florinia",
-                "Gabriel Monteiro",
-                "Glicerio",
-                "Guaracai",
-                "Guararapes",
-                "Iepe",
-                "Ilha Solteira",
-                "Indiana",
-                "Inubia Paulista",
-                "Irapuru",
-                "Itapura",
-                "João Ramalho",
-                "Junqueirópolis",
-                "Lavinia",
-                "Lourdes",
-                "Lucelia",
-                "Luiziania",
-                "Lutecia",
-                "Maraba Paulista",
-                "Maracai",
-                "Mariápolis",
-                "Martinópolis",
-                "Mirandópolis",
-                "Mirante do Paranapanema",
-                "Monte Castelo",
-                "Murutinga do Sul",
-                "Nantes",
-                "Narandiba",
-                "Nova Guataporanga",
-                "Nova Independência",
-                "Osvaldo Cruz",
-                "Ouro Verde",
-                "Pacaembu",
-                "Palmital",
-                "Panorama",
-                "Paraguacu Paulista",
-                "Parapua",
-                "Pauliceia",
-                "Pedrinhas Paulista",
-                "Penápolis",
-                "Pereira Barreto",
-                "Piacatu",
-                "Piquerobi",
-                "Pirapozinho",
-                "Planalto",
-                "Platina",
-                "Pracinha",
-                "Presidente Bernardes",
-                "Presidente Epitacio",
-                "Presidente Prudente",
-                "Presidente Venceslau",
-                "Quata",
-                "Rancharia",
-                "Regente Feijo",
-                "Ribeirao dos Indios",
-                "Rinópolis",
-                "Rosana",
-                "Rubiacea",
-                "Sagres",
-                "Salmourao",
-                "Sandovalina",
-                "Santa Mercedes",
-                "Santo Anastacio",
-                "Santo Antônio do Aracangua",
-                "Santo Expedito",
-                "Santopolis do Aguapei",
-                "São João do Pau D'alho",
-                "Sud Mennucci",
-                "Suzanápolis",
-                "Taciba",
-                "Tarabai",
-                "Taruma",
-                "Teodoro Sampaio",
-                "Tupi Paulista",
-                "Turiuba",
-                "Valparaíso",
-                "Zacarias"
-              ]  
-            }
-            return data
-            } else if (ddd == 19){
-    let data = {
-      "DDD":19,
-      "Estado":"São Paulo",
-      "Municipios":
-        [
-            "Aguai",
-            "Águas da Prata",
-            "Águas de Lindoia",
-            "Águas de São Pedro",
-            "Americana",
-            "Amparo",
-            "Analândia",
-            "Araras",
-            "Artur Nogueira",
-            "Caconde",
-            "Campinas",
-            "Capivari",
-            "Casa Branca",
-            "Charqueada",
-            "Conchal",
-            "Cordeirópolis",
-            "Corumbatai",
-            "Cosmópolis",
-            "Descalvado",
-            "Divinolândia",
-            "Elias Fausto",
-            "Engenheiro Coelho",
-            "Espirito Santo do Pinhal",
-            "Estiva Gerbi",
-            "Holambra",
-            "Hortolândia",
-            "Indaiatuba",
-            "Ipeuna",
-            "Iracemápolis",
-            "Itapira",
-            "Itirapina",
-            "Itobi",
-            "Jaguariuna",
-            "Leme",
-            "Limeira",
-            "Lindoia",
-            "Louveira",
-            "Mococa",
-            "Mogi Guaçu",
-            "Moji-Mirim",
-            "Mombuca",
-            "Monte Alegre do Sul",
-            "Monte Mor",
-            "Nova Odessa",
-            "Paulinia",
-            "Pedreira",
-            "Piracicaba",
-            "Pirassununga",
-            "Porto Ferreira",
-            "Rafard",
-            "Rio Claro",
-            "Rio das Pedras",
-            "Saltinho",
-            "Santa Barbara D'oeste",
-            "Santa Cruz da Conceição",
-            "Santa Cruz das Palmeiras",
-            "Santa Gertrudes",
-            "Santa Maria da Serra",
-            "Santa Rita do Passa Quatro",
-            "Santo Antônio de Posse",
-            "Santo Antônio do Jardim",
-            "São João da Boa Vista",
-            "São José do Rio Pardo",
-            "São Pedro",
-            "São Sebastião da Grama",
-            "Serra Negra",
-            "Socorro",
-            "Sumare",
-            "Tambau",
-            "Tapiratiba",
-            "Valinhos",
-            "Vargem Grande do Sul",
-            "Vinhedo"
-
-
-        ]  
-    }
-    return data
-
-} else if (ddd == 19){
-      let data = {
-        "DDD":19,
-        "Estado":"São Paulo",
-        "Municipios":
-          [
-              "Aguai",
-              "Águas da Prata",
-              "Águas de Lindoia",
-              "Águas de São Pedro",
-              "Americana",
-              "Amparo",
-              "Analândia",
-              "Araras",
-              "Artur Nogueira",
-              "Caconde",
-              "Campinas",
-              "Capivari",
-              "Casa Branca",
-              "Charqueada",
-              "Conchal",
-              "Cordeirópolis",
-              "Corumbatai",
-              "Cosmópolis",
-              "Descalvado",
-              "Divinolândia",
-              "Elias Fausto",
-              "Engenheiro Coelho",
-              "Espirito Santo do Pinhal",
-              "Estiva Gerbi",
-              "Holambra",
-              "Hortolândia",
-              "Indaiatuba",
-              "Ipeuna",
-              "Iracemápolis",
-              "Itapira",
-              "Itirapina",
-              "Itobi",
-              "Jaguariuna",
-              "Leme",
-              "Limeira",
-              "Lindoia",
-              "Louveira",
-              "Mococa",
-              "Mogi Guaçu",
-              "Moji-Mirim",
-              "Mombuca",
-              "Monte Alegre do Sul",
-              "Monte Mor",
-              "Nova Odessa",
-              "Paulinia",
-              "Pedreira",
-              "Piracicaba",
-              "Pirassununga",
-              "Porto Ferreira",
-              "Rafard",
-              "Rio Claro",
-              "Rio das Pedras",
-              "Saltinho",
-              "Santa Barbara D'oeste",
-              "Santa Cruz da Conceição",
-              "Santa Cruz das Palmeiras",
-              "Santa Gertrudes",
-              "Santa Maria da Serra",
-              "Santa Rita do Passa Quatro",
-              "Santo Antônio de Posse",
-              "Santo Antônio do Jardim",
-              "São João da Boa Vista",
-              "São José do Rio Pardo",
-              "São Pedro",
-              "São Sebastião da Grama",
-              "Serra Negra",
-              "Socorro",
-              "Sumare",
-              "Tambau",
-              "Tapiratiba",
-              "Valinhos",
-              "Vargem Grande do Sul",
-              "Vinhedo"
-          ]  
-      }
-      return data
-    } else if (ddd == 21){
-      let data = {
-        "DDD":21,
-        "Estado":"Rio de Janeiro",
-        "Municipios":
-          [
-              "Aguai",
-              "Belford Roxo",
-              "Cachoeiras de Macaçu",
-              "Duque de Caxias",
-              "Guapimirim",
-              "Itaborai",
-              "Itaguai",
-              "Japeri",
-              "Mage",
-              "Mangaratiba",
-              "Marica",
-              "Mesquita",
-              "Nilópolis",
-              "Niteroi",
-              "Nova Iguaçu",
-              "Paracambi",
-              "Queimados",
-              "Rio Bonito",
-              "Rio de Janeiro",
-              "São Goncalo",
-              "São João de Meriti",
-              "Seropedica",
-              "Tangua",
-              "Teresópolis"
-          ]  
-      }
-      return data
-    } else if (ddd == 22){
-      let data = {
-        "DDD":22,
-        "Estado":"Rio de Janeiro",
-        "Municipios":
-          [
-              "Aperibe",
-              "Araruama",
-              "Armacao dos Buzios",
-              "Arraial do Cabo",
-              "Bom Jardim",
-              "Bom Jesus do Itabapoana",
-              "Cabo Frio",
-              "Cambuci",
-              "Campos dos Goytacazes",
-              "Cantagalo",
-              "Carapebus",
-              "Cardoso Moreira",
-              "Carmo",
-              "Casimiro de Abreu",
-              "Conceição de Macabu",
-              "Cordeiro",
-              "Duas Barras",
-              "Iguaba Grande",
-              "Italva",
-              "Itaocara",
-              "Itaperuna",
-              "Laje do Muriae",
-              "Macae",
-              "Macuco",
-              "Miracema",
-              "Natividade",
-              "Nova Friburgo",
-              "Porciuncula",
-              "Quissama",
-              "Rio das Ostras",
-              "Santa Maria Madalena",
-              "Santo Antônio de Padua",
-              "São Fidelis",
-              "São Francisco de Itabapoana",
-              "São João da Barra",
-              "São José de Uba",
-              "São Pedro da Aldeia",
-              "São Sebastião do Alto",
-              "Saquarema",
-              "Silva Jardim",
-              "Sumidouro",
-              "Trajano de Morais",
-              "Varre-Sai"
-          ]  
-      }
-      return data
-    } else if (ddd == 24){
-      let data = {
-        "DDD":24,
-        "Estado":"Rio de Janeiro",
-        "Municipios":
-          [
-            "Angra dos Reis",
-            "Areal",
-            "Barra do Pirai",
-            "Barra Mansa",
-            "Comendador Levy Gasparian",
-            "Engenheiro Paulo de Frontin",
-            "Itatiaia",
-            "Mendes",
-            "Miguel Pereira",
-            "Paraiba do Sul",
-            "Parati",
-            "Paty do Alferes",
-            "Petrópolis",
-            "Pinheiral",
-            "Pirai",
-            "Porto Real",
-            "Quatis",
-            "Resende",
-            "Rio Claro",
-            "Rio das Flores",
-            "São José do Vale do Rio Preto",
-            "Sapucaia",
-            "Três Rios",
-            "Valenca",
-            "Vassouras",
-            "Volta Redonda"
-            
-          ]  
-      }
-      return data
-      } else if (ddd == 27){
-        let data = {
-          "DDD":27,
-          "Estado":"Espírito Santo",
-          "Municipios":
-            [
-              "Afonso Claudio",
-              "Água Doce do Norte",
-              "Aguia Branca",
-              "Alfredo Chaves",
-              "Alto Rio Novo",
-              "Aracruz",
-              "Baixo Guandu",
-              "Barra de São Francisco",
-              "Boa Esperança",
-              "Brejetuba",
-              "Cariacica",
-              "Colatina",
-              "Conceição da Barra",
-              "Domingos Martins",
-              "Ecoporanga",
-              "Fundao",
-              "Governador Lindenberg",
-              "Guarapari",
-              "Ibiraçu",
-              "Itaguaçu",
-              "Itarana",
-              "Jaguare",
-              "João Neiva",
-              "Laranja da Terra",
-              "Linhares",
-              "Mantenópolis",
-              "Marechal Floriano",
-              "Marilândia",
-              "Montanha",
-              "Mucurici",
-              "Nova Venecia",
-              "Pancas",
-              "Pedro Canario",
-              "Pinheiros",
-              "Ponto Belo",
-              "Rio Bananal",
-              "Santa Leopoldina",
-              "Santa Maria de Jetiba",
-              "Santa Teresa",
-              "São Domingos do Norte",
-              "São Gabriel da Palha",
-              "São Mateus",
-              "São Roque do Canaã",
-              "Serra",
-              "Sooretama",
-              "Viana",
-              "Vila Pavao",
-              "Vila Valerio",
-              "Vila Velha",
-              "Vitória"
-
-            ]  
-        }
-        return data
-      } else if (ddd == 28){
-        let data = {
-          "DDD":28,
-          "Estado":"Espírito Santo",
-          "Municipios":
-            [
-              "Alegre",
-              "Anchieta",
-              "Apiaca",
-              "Atilio Vivacqua",
-              "Bom Jesus do Norte",
-              "Cachoeiro de Itapemirim",
-              "Castelo",
-              "Conceição do Castelo",
-              "Divino de São Lourenço",
-              "Dores do Rio Preto",
-              "Guacui",
-              "Ibatiba",
-              "Ibitirama",
-              "Iconha",
-              "Irupi",
-              "Itapemirim",
-              "Iuna",
-              "Jeronimo Monteiro",
-              "Marataizes",
-              "Mimoso do Sul",
-              "Muniz Freire",
-              "Muqui",
-              "Piuma",
-              "Presidente Kennedy",
-              "Rio Novo do Sul",
-              "São José do Calcado",
-              "Vargem Alta",
-              "Venda Nova do Imigrante",
-              
-  
-            ]  
-        }
-  return data
-    } else if (ddd == 31){
-      let data = {
-        "DDD":31,
-        "Estado":"Minas Gerais",
-        "Municipios":
-          [
-            "Abre Campo",
-            "Acaiaca",
-            "Alvinópolis",
-            "Alvorada de Minas",
-            "Amparo do Serra",
-            "Antônio Dias",
-            "Aracai",
-            "Araponga",
-            "Baldim",
-            "Barao de Cocais",
-            "Barra Longa",
-            "Bela Vista de Minas",
-            "Belo Horizonte",
-            "Belo Vale",
-            "Betim",
-            "Bom Jesus do Amparo",
-            "Bonfim",
-            "Brumadinho",
-            "Cachoeira da Prata",
-            "Caetanópolis",
-            "Caete",
-            "Cajuri",
-            "Canaã",
-            "Capela Nova",
-            "Capim Branco",
-            "Caputira",
-            "Caranaiba",
-            "Carmesia",
-            "Casa Grande",
-            "Catas Altas",
-            "Catas Altas da Noruega",
-            "Conceição do Mato Dentro",
-            "Confins",
-            "Congonhas",
-            "Congonhas do Norte",
-            "Conselheiro Lafaiete",
-            "Contagem",
-            "Cordisburgo",
-            "Coronel Fabriciano",
-            "Cristiano Otoni",
-            "Crucilândia",
-            "Desterro de Entre Rios",
-            "Diogo de Vasconcelos",
-            "Dionisio",
-            "Dom Joaquim",
-            "Dom Silverio",
-            "Entre Rios de Minas",
-            "Esmeraldas",
-            "Ferros",
-            "Florestal",
-            "Fortuna de Minas",
-            "Funilândia",
-            "Guaraciaba",
-            "Ibirite",
-            "Igarape",
-            "Inhauma",
-            "Ipatinga",
-            "Itabira",
-            "Itabirito",
-            "Itambe do Mato Dentro",
-            "Itatiaiuçu",
-            "Itaverava",
-            "Jaboticatubas",
-            "Jaguaraçu",
-            "Jeceaba",
-            "Jequeri",
-            "Jequitiba",
-            "João Monlevade",
-            "Juatuba",
-            "Lagoa Santa",
-            "Lamim",
-            "Mariana",
-            "Mario Campos",
-            "Marlieria",
-            "Mateus Leme",
-            "Matipo",
-            "Matozinhos",
-            "Moeda",
-            "Morro do Pilar",
-            "Nova Era",
-            "Nova Lima",
-            "Nova União",
-            "Oratorios",
-            "Ouro Branco",
-            "Ouro Preto",
-            "Paraopeba",
-            "Passabem",
-            "Pedra Bonita",
-            "Pedra do Anta",
-            "Pedro Leopoldo",
-            "Piedade de Ponte Nova",
-            "Piedade dos Gerais",
-            "Piranga",
-            "Ponte Nova",
-            "Porto Firme",
-            "Prudente de Morais",
-            "Queluzito",
-            "Raposos",
-            "Ribeirao das Neves",
-            "Rio Acima",
-            "Rio Casca",
-            "Rio Doce",
-            "Rio Espera",
-            "Rio Manso",
-            "Rio Piracicaba",
-            "Sabara",
-            "Santa Barbara",
-            "Santa Cruz do Escalvado",
-            "Santa Luzia",
-            "Santa Margarida",
-            "Santa Maria de Itabira",
-            "Santana de Pirapama",
-            "Santana do Riacho",
-            "Santana dos Montes",
-            "Santo Antônio do Grama",
-            "Santo Antônio do Rio Abaixo",
-            "São Bras do Suacui",
-            "São Domingos do Prata",
-            "São Goncalo do Rio Abaixo",
-            "São Joaquim de Bicas",
-            "São José da Lapa",
-            "São José do Goiabal",
-            "São Miguel do Anta",
-            "São Sebastião do Rio Preto",
-            "Sarzedo",
-            "Sem-Peixe",
-            "Senhora de Oliveira",
-            "Sericita",
-            "Sete Lagoas",
-            "Taquaracu de Minas",
-            "Teixeiras",
-            "Timoteo",
-            "Urucania",
-            "Vespasiano",
-            "Viçosa"
-
-          ]  
-      }
-return data
-} else if (ddd == 32){
-  let data = {
-    "DDD":32,
-    "Estado":"Minas Gerais",
-    "Municipios":
-      [
+async function localizar(ddd) {
+  let dataOne;
+  if (ddd == 13) {
+    dataOne = {
+      DDD: 13,
+      Estado: "São Paulo",
+      Municipios: [
+        "Bertioga",
+        "Cubatão",
+        "Iguape",
+        "Itariri",
+        "Miracatu",
+        "Pedro de Toledo",
+        "Sete Barras",
+        "Cajati",
+        "Eldorado",
+        "Ilha Comprida",
+        "Jacupiranga",
+        "Cananeia",
+        "Juquia",
+        "Pariquera-Açu",
+        "Registro",
+        "Guarujá",
+        "Mongaguá",
+        "Peruíbe",
+        "Praia Grande",
+        "Santos",
+        "São Vicente",
+      ],
+    };
+  } else if (ddd == 11) {
+    dataOne = {
+      DDD: 11,
+      Estado: "São Paulo",
+      Municipios: [
+        "Aluminio",
+        "Aracariguama",
+        "Aruja",
+        "Atibaia",
+        "Barueri",
+        "Biritiba-Mirim",
+        "Bom Jesus dos Perdoes",
+        "Braganca Paulista",
+        "Cabreuva",
+        "Caieiras",
+        "Cajamar",
+        "Campo Limpo Paulista",
+        "Carapicuiba",
+        "Ciabyte",
+        "Cotia",
+        "Diadema",
+        "Embu",
+        "Embu-Guaçu",
+        "Ferraz de Vasconcelos",
+        "Francisco Morato",
+        "Franco da Rocha",
+        "Guararema",
+        "Guarulhos",
+        "Igarata",
+        "Itapecerica da Serra",
+        "Itapevi",
+        "Itaquaquecetuba",
+        "Itatiba",
+        "Itu",
+        "Itupeva",
+        "Jandira",
+        "Jarinu",
+        "Joanópolis",
+        "Jundiai",
+        "Juquitiba",
+        "Mairinque",
+        "Mairipora",
+        "Maua",
+        "Moji das Cruzes",
+        "Morungaba",
+        "Nazare Paulista",
+        "Osasco",
+        "Pedra Bela",
+        "Pinhalzinho",
+        "Piracaia",
+        "Pirapora do Bom Jesus",
+        "Poa",
+        "Ribeirao Pires",
+        "Rio Grande da Serra",
+        "Salesópolis",
+        "Salto",
+        "Santa Isabel",
+        "Santana de Parnaiba",
+        "Santo Andre",
+        "São Bernardo do Campo",
+        "São Caetano do Sul",
+        "São Lourenço da Serra",
+        "São Paulo",
+        "São Roque",
+        "Suzano",
+        "Taboao da Serra",
+        "Tuiuti",
+        "Vargem",
+        "Vargem Grande Paulista",
+        "Varzea Paulista",
+      ],
+    };
+  } else if (ddd == 12) {
+    dataOne = {
+      DDD: 12,
+      Estado: "São Paulo",
+      Municipios: [
+        "Aparecida",
+        "Arapei",
+        "Areias",
+        "Bananal",
+        "Cacapava",
+        "Cachoeira Paulista",
+        "Campos do Jordão",
+        "Canas",
+        "Caraguatatuba",
+        "Cruzeiro",
+        "Cunha",
+        "Guaratingueta",
+        "Ilhabela",
+        "Jacarei",
+        "Jambeiro",
+        "Lagoinha",
+        "Lavrinhas",
+        "Lorena",
+        "Monteiro Lobato",
+        "Natividade da Serra",
+        "Paraibuna",
+        "Pindamonhangaba",
+        "Piquete",
+        "Potim",
+        "Queluz",
+        "Redenção da Serra",
+        "Roseira",
+        "Santa Branca",
+        "Santo Antônio do Pinhal",
+        "São Bento do Sapucai",
+        "São José do Barreiro",
+        "São José dos Campos",
+        "São Luis do Paraitinga",
+        "São Sebastião",
+        "Silveiras",
+        "Taubate",
+        "Tremembe",
+        "Ubatuba",
+      ],
+    };
+  } else if (ddd == 14) {
+    dataOne = {
+      DDD: 14,
+      Estado: "São Paulo",
+      Municipios: [
+        "Águas de Santa Barbara",
+        "Agudos",
+        "Alvaro de Carvalho",
+        "Alvinlândia",
+        "Anhembi",
+        "Arandu",
+        "Arco-Iris",
+        "Arealva",
+        "Areiópolis",
+        "Avai",
+        "Avare",
+        "Balbinos",
+        "Bariri",
+        "Barra Bonita",
+        "Bastos",
+        "Bauru",
+        "Bernardino de Campos",
+        "Bocaina",
+        "Bofete",
+        "Boraceia",
+        "Borebi",
+        "Botucatu",
+        "Brotas",
+        "Cabralia Paulista",
+        "Cafelândia",
+        "Campos Novos Paulista",
+        "Canitar",
+        "Cerqueira Cesar",
+        "Chavantes",
+        "Conchas",
+        "Coronel Macedo",
+        "Dois Corregos",
+        "Duartina",
+        "Espirito Santo do Turvo",
+        "Fartura",
+        "Fernao",
+        "Galia",
+        "Garca",
+        "Getulina",
+        "Guaicara",
+        "Guaimbe",
+        "Guaranta",
+        "Herculândia",
+        "Iacanga",
+        "Iacri",
+        "Iaras",
+        "Ibirarema",
+        "Igaracu do Tiete",
+        "Ipaussu",
+        "Itai",
+        "Itaju",
+        "Itapui",
+        "Itatinga",
+        "Jau",
+        "Julio Mesquita",
+        "Lencois Paulista",
+        "Lins",
+        "Lucianópolis",
+        "Lupercio",
+        "Macatuba",
+        "Manduri",
+        "Marilia",
+        "Mineiros do Tiete",
+        "Ocauçu",
+        "Oleo",
+        "Oriente",
+        "Oscar Bressane",
+        "Ourinhos",
+        "Paranapanema",
+        "Pardinho",
+        "Paulistania",
+        "Pederneiras",
+        "Pereiras",
+        "Piraju",
+        "Pirajui",
+        "Piratininga",
+        "Pompeia",
+        "Pongai",
+        "Pratania",
+        "Presidente Alves",
+        "Promissão",
+        "Queiroz",
+        "Quintana",
+        "Reginópolis",
+        "Ribeirao do Sul",
+        "Sabino",
+        "Salto Grande",
+        "Santa Cruz do Rio Pardo",
+        "São Manuel",
+        "São Pedro do Turvo",
+        "Sarutaia",
+        "Taguai",
+        "Taquarituba",
+        "Tejupa",
+        "Timburi",
+        "Torrinha",
+        "Tupa",
+        "Ubirajara",
+        "Uru",
+        "Vera Cruz",
+      ],
+    };
+  } else if (ddd == 15) {
+    dataOne = {
+      DDD: 15,
+      Estado: "São Paulo",
+      Municipios: [
+        "Alambari",
+        "Angatuba",
+        "Apiai",
+        "Aracoiaba da Serra",
+        "Barao de Antonina",
+        "Barra do Chapeu",
+        "Barra do Turvo",
+        "Boituva",
+        "Bom Sucesso de Itarare",
+        "Buri",
+        "Campina do Monte Alegre",
+        "Capao Bonito",
+        "Capela do Alto",
+        "Cerquilho",
+        "Cesario Lange",
+        "Guapiara",
+        "Guarei",
+        "Ibiuna",
+        "Ipero",
+        "Iporanga",
+        "Itabera",
+        "Itaoca",
+        "Itapetininga",
+        "Itapeva",
+        "Itapirapua Paulista",
+        "Itaporanga",
+        "Itarare",
+        "Jumirim",
+        "Laranjal Paulista",
+        "Nova Campina",
+        "Piedade",
+        "Pilar do Sul",
+        "Porangaba",
+        "Porto Feliz",
+        "Quadra",
+        "Ribeira",
+        "Ribeirao Branco",
+        "Ribeirao Grande",
+        "Riversul",
+        "Salto de Pirapora",
+        "São Miguel Arcanjo",
+        "Sarapui",
+        "Sorocaba",
+        "Tapirai",
+        "Taquarivai",
+        "Tatui",
+        "Tiete",
+        "Torre de Pedra",
+        "Votorantim",
+      ],
+    };
+  } else if (ddd == 16) {
+    dataOne = {
+      DDD: 16,
+      Estado: "São Paulo",
+      Municipios: [
+        "Altinópolis",
+        "Americo Brasiliense",
+        "Aramina",
+        "Araraquara",
+        "Barrinha",
+        "Batatais",
+        "Boa Esperança do Sul",
+        "Borborema",
+        "Brodowski",
+        "Buritizal",
+        "Cajuru",
+        "Candido Rodrigues",
+        "Cassia dos Coqueiros",
+        "Cravinhos",
+        "Cristais Paulista",
+        "Dobrada",
+        "Dourado",
+        "Dumont",
+        "Fernando Prestes",
+        "Franca",
+        "Gaviao Peixoto",
+        "Guara",
+        "Guariba",
+        "Guatapara",
+        "Ibate",
+        "Ibitinga",
+        "Igarapava",
+        "Ipua",
+        "Itápolis",
+        "Itirapua",
+        "Ituverava",
+        "Jaboticabal",
+        "Jardinópolis",
+        "Jeriquara",
+        "Luis Antônio",
+        "Matao",
+        "Miguelópolis",
+        "Monte Alto",
+        "Morro Agudo",
+        "Motuca",
+        "Nova Europa",
+        "Nuporanga",
+        "Orlândia",
+        "Patrocinio Paulista",
+        "Pedregulho",
+        "Pitangueiras",
+        "Pontal",
+        "Pradópolis",
+        "Restinga",
+        "Ribeirao Bonito",
+        "Ribeirao Corrente",
+        "Ribeirao Preto",
+        "Rifaina",
+        "Rincao",
+        "Sales Oliveira",
+        "Santa Cruz da Esperança",
+        "Santa Ernestina",
+        "Santa Lucia",
+        "Santa Rosa de Viterbo",
+        "Santo Antônio da Alegria",
+        "São Carlos",
+        "São Joaquim da Barra",
+        "São José da Bela Vista",
+        "São Simão",
+        "Serra Azul",
+        "Serrana",
+        "Sertaozinho",
+        "Tabatinga",
+        "Taiaçu",
+        "Taiuva",
+        "Taquaral",
+        "Taquaritinga",
+        "Trabiju",
+        "Vista Alegre do Alto",
+      ],
+    };
+  } else if (ddd == 17) {
+    dataOne = {
+      DDD: 17,
+      Estado: "São Paulo",
+      Municipios: [
+        "Adolfo",
+        "Altair",
+        "Alvares Florence",
+        "Americo de Campos",
+        "Aparecida D'oeste",
+        "Ariranha",
+        "Aspasia",
+        "Auriflama",
+        "Bady Bassitt",
+        "Balsamo",
+        "Barretos",
+        "Bebedouro",
+        "Cajobi",
+        "Cardoso",
+        "Catanduva",
+        "Catigua",
+        "Cedral",
+        "Colina",
+        "Colombia",
+        "Cosmorama",
+        "Dirce Reis",
+        "Dolcinópolis",
+        "Elisiario",
+        "Embauba",
+        "Estrela D'oeste",
+        "Fernandópolis",
+        "Floreal",
+        "Gastao Vidigal",
+        "General Salgado",
+        "Guaira",
+        "Guapiaçu",
+        "Guaraci",
+        "Guarani D'oeste",
+        "Guzolândia",
+        "Ibira",
+        "Icem",
+        "Indiapora",
+        "Ipigua",
+        "Irapua",
+        "Itajobi",
+        "Jaborandi",
+        "Jaci",
+        "Jales",
+        "José Bonifacio",
+        "Macaubal",
+        "Macedonia",
+        "Magda",
+        "Marapoama",
+        "Marinópolis",
+        "Mendonca",
+        "Meridiano",
+        "Mesópolis",
+        "Mira Estrela",
+        "Mirassol",
+        "Mirassolândia",
+        "Moncoes",
+        "Monte Aprazivel",
+        "Monte Azul Paulista",
+        "Neves Paulista",
+        "Nhandeara",
+        "Nipoa",
+        "Nova Alianca",
+        "Nova Canaã Paulista",
+        "Nova Castilho",
+        "Nova Granada",
+        "Nova Luzitania",
+        "Novais",
+        "Novo Horizonte",
+        "Olimpia",
+        "Onda Verde",
+        "Orindiuva",
+        "Ouroeste",
+        "Palestina",
+        "Palmares Paulista",
+        "Palmeira D'oeste",
+        "Paraíso",
+        "Paranapua",
+        "Parisi",
+        "Paulo de Faria",
+        "Pedranópolis",
+        "Pindorama",
+        "Pirangi",
+        "Poloni",
+        "Pontalinda",
+        "Pontes Gestal",
+        "Populina",
+        "Potirendaba",
+        "Riolândia",
+        "Rubineia",
+        "Sales",
+        "Santa Adelia",
+        "Santa Albertina",
+        "Santa Clara D'oeste",
+        "Santa Fe do Sul",
+        "Santa Rita D'oeste",
+        "Santa Salete",
+        "Santana da Ponte Pensa",
+        "São Francisco",
+        "São João das Duas Pontes",
+        "São João de Iracema",
+        "São José do Rio Preto",
+        "Sebastianopolis do Sul",
+        "Severinia",
+        "Tabapua",
+        "Tanabi",
+        "Terra Roxa",
+        "Três Fronteiras",
+        "Turmalina",
+        "Ubarana",
+        "Uchoa",
+        "União Paulista",
+        "Urania",
+        "Urupes",
+        "Valentim Gentil",
+        "Viradouro",
+        "Vitória Brasil",
+        "Votuporanga",
+      ],
+    };
+  } else if (ddd == 18) {
+    dataOne = {
+      DDD: 18,
+      Estado: "São Paulo",
+      Municipios: [
+        "Adamantina",
+        "Alfredo Marcondes",
+        "Alto Alegre",
+        "Alvares Machado",
+        "Andradina",
+        "Anhumas",
+        "Aracatuba",
+        "Assis",
+        "Avanhandava",
+        "Barbosa",
+        "Bento de Abreu",
+        "Bilac",
+        "Birigui",
+        "Bora",
+        "Brauna",
+        "Brejo Alegre",
+        "Buritama",
+        "Caiabu",
+        "Caiua",
+        "Candido Mota",
+        "Castilho",
+        "Clementina",
+        "Coroados",
+        "Cruzalia",
+        "Dracena",
+        "Echapora",
+        "Emilianópolis",
+        "Estrela do Norte",
+        "Euclides da Cunha Paulista",
+        "Flora Rica",
+        "Florida Paulista",
+        "Florinia",
+        "Gabriel Monteiro",
+        "Glicerio",
+        "Guaracai",
+        "Guararapes",
+        "Iepe",
+        "Ilha Solteira",
+        "Indiana",
+        "Inubia Paulista",
+        "Irapuru",
+        "Itapura",
+        "João Ramalho",
+        "Junqueirópolis",
+        "Lavinia",
+        "Lourdes",
+        "Lucelia",
+        "Luiziania",
+        "Lutecia",
+        "Maraba Paulista",
+        "Maracai",
+        "Mariápolis",
+        "Martinópolis",
+        "Mirandópolis",
+        "Mirante do Paranapanema",
+        "Monte Castelo",
+        "Murutinga do Sul",
+        "Nantes",
+        "Narandiba",
+        "Nova Guataporanga",
+        "Nova Independência",
+        "Osvaldo Cruz",
+        "Ouro Verde",
+        "Pacaembu",
+        "Palmital",
+        "Panorama",
+        "Paraguacu Paulista",
+        "Parapua",
+        "Pauliceia",
+        "Pedrinhas Paulista",
+        "Penápolis",
+        "Pereira Barreto",
+        "Piacatu",
+        "Piquerobi",
+        "Pirapozinho",
+        "Planalto",
+        "Platina",
+        "Pracinha",
+        "Presidente Bernardes",
+        "Presidente Epitacio",
+        "Presidente Prudente",
+        "Presidente Venceslau",
+        "Quata",
+        "Rancharia",
+        "Regente Feijo",
+        "Ribeirao dos Indios",
+        "Rinópolis",
+        "Rosana",
+        "Rubiacea",
+        "Sagres",
+        "Salmourao",
+        "Sandovalina",
+        "Santa Mercedes",
+        "Santo Anastacio",
+        "Santo Antônio do Aracangua",
+        "Santo Expedito",
+        "Santopolis do Aguapei",
+        "São João do Pau D'alho",
+        "Sud Mennucci",
+        "Suzanápolis",
+        "Taciba",
+        "Tarabai",
+        "Taruma",
+        "Teodoro Sampaio",
+        "Tupi Paulista",
+        "Turiuba",
+        "Valparaíso",
+        "Zacarias",
+      ],
+    };
+  } else if (ddd == 19) {
+    dataOne = {
+      DDD: 19,
+      Estado: "São Paulo",
+      Municipios: [
+        "Aguai",
+        "Águas da Prata",
+        "Águas de Lindoia",
+        "Águas de São Pedro",
+        "Americana",
+        "Amparo",
+        "Analândia",
+        "Araras",
+        "Artur Nogueira",
+        "Caconde",
+        "Campinas",
+        "Capivari",
+        "Casa Branca",
+        "Charqueada",
+        "Conchal",
+        "Cordeirópolis",
+        "Corumbatai",
+        "Cosmópolis",
+        "Descalvado",
+        "Divinolândia",
+        "Elias Fausto",
+        "Engenheiro Coelho",
+        "Espirito Santo do Pinhal",
+        "Estiva Gerbi",
+        "Holambra",
+        "Hortolândia",
+        "Indaiatuba",
+        "Ipeuna",
+        "Iracemápolis",
+        "Itapira",
+        "Itirapina",
+        "Itobi",
+        "Jaguariuna",
+        "Leme",
+        "Limeira",
+        "Lindoia",
+        "Louveira",
+        "Mococa",
+        "Mogi Guaçu",
+        "Moji-Mirim",
+        "Mombuca",
+        "Monte Alegre do Sul",
+        "Monte Mor",
+        "Nova Odessa",
+        "Paulinia",
+        "Pedreira",
+        "Piracicaba",
+        "Pirassununga",
+        "Porto Ferreira",
+        "Rafard",
+        "Rio Claro",
+        "Rio das Pedras",
+        "Saltinho",
+        "Santa Barbara D'oeste",
+        "Santa Cruz da Conceição",
+        "Santa Cruz das Palmeiras",
+        "Santa Gertrudes",
+        "Santa Maria da Serra",
+        "Santa Rita do Passa Quatro",
+        "Santo Antônio de Posse",
+        "Santo Antônio do Jardim",
+        "São João da Boa Vista",
+        "São José do Rio Pardo",
+        "São Pedro",
+        "São Sebastião da Grama",
+        "Serra Negra",
+        "Socorro",
+        "Sumare",
+        "Tambau",
+        "Tapiratiba",
+        "Valinhos",
+        "Vargem Grande do Sul",
+        "Vinhedo",
+      ],
+    };
+  } else if (ddd == 19) {
+    dataOne = {
+      DDD: 19,
+      Estado: "São Paulo",
+      Municipios: [
+        "Aguai",
+        "Águas da Prata",
+        "Águas de Lindoia",
+        "Águas de São Pedro",
+        "Americana",
+        "Amparo",
+        "Analândia",
+        "Araras",
+        "Artur Nogueira",
+        "Caconde",
+        "Campinas",
+        "Capivari",
+        "Casa Branca",
+        "Charqueada",
+        "Conchal",
+        "Cordeirópolis",
+        "Corumbatai",
+        "Cosmópolis",
+        "Descalvado",
+        "Divinolândia",
+        "Elias Fausto",
+        "Engenheiro Coelho",
+        "Espirito Santo do Pinhal",
+        "Estiva Gerbi",
+        "Holambra",
+        "Hortolândia",
+        "Indaiatuba",
+        "Ipeuna",
+        "Iracemápolis",
+        "Itapira",
+        "Itirapina",
+        "Itobi",
+        "Jaguariuna",
+        "Leme",
+        "Limeira",
+        "Lindoia",
+        "Louveira",
+        "Mococa",
+        "Mogi Guaçu",
+        "Moji-Mirim",
+        "Mombuca",
+        "Monte Alegre do Sul",
+        "Monte Mor",
+        "Nova Odessa",
+        "Paulinia",
+        "Pedreira",
+        "Piracicaba",
+        "Pirassununga",
+        "Porto Ferreira",
+        "Rafard",
+        "Rio Claro",
+        "Rio das Pedras",
+        "Saltinho",
+        "Santa Barbara D'oeste",
+        "Santa Cruz da Conceição",
+        "Santa Cruz das Palmeiras",
+        "Santa Gertrudes",
+        "Santa Maria da Serra",
+        "Santa Rita do Passa Quatro",
+        "Santo Antônio de Posse",
+        "Santo Antônio do Jardim",
+        "São João da Boa Vista",
+        "São José do Rio Pardo",
+        "São Pedro",
+        "São Sebastião da Grama",
+        "Serra Negra",
+        "Socorro",
+        "Sumare",
+        "Tambau",
+        "Tapiratiba",
+        "Valinhos",
+        "Vargem Grande do Sul",
+        "Vinhedo",
+      ],
+    };
+  } else if (ddd == 21) {
+    dataOne = {
+      DDD: 21,
+      Estado: "Rio de Janeiro",
+      Municipios: [
+        "Aguai",
+        "Belford Roxo",
+        "Cachoeiras de Macaçu",
+        "Duque de Caxias",
+        "Guapimirim",
+        "Itaborai",
+        "Itaguai",
+        "Japeri",
+        "Mage",
+        "Mangaratiba",
+        "Marica",
+        "Mesquita",
+        "Nilópolis",
+        "Niteroi",
+        "Nova Iguaçu",
+        "Paracambi",
+        "Queimados",
+        "Rio Bonito",
+        "Rio de Janeiro",
+        "São Goncalo",
+        "São João de Meriti",
+        "Seropedica",
+        "Tangua",
+        "Teresópolis",
+      ],
+    };
+  } else if (ddd == 22) {
+    dataOne = {
+      DDD: 22,
+      Estado: "Rio de Janeiro",
+      Municipios: [
+        "Aperibe",
+        "Araruama",
+        "Armacao dos Buzios",
+        "Arraial do Cabo",
+        "Bom Jardim",
+        "Bom Jesus do Itabapoana",
+        "Cabo Frio",
+        "Cambuci",
+        "Campos dos Goytacazes",
+        "Cantagalo",
+        "Carapebus",
+        "Cardoso Moreira",
+        "Carmo",
+        "Casimiro de Abreu",
+        "Conceição de Macabu",
+        "Cordeiro",
+        "Duas Barras",
+        "Iguaba Grande",
+        "Italva",
+        "Itaocara",
+        "Itaperuna",
+        "Laje do Muriae",
+        "Macae",
+        "Macuco",
+        "Miracema",
+        "Natividade",
+        "Nova Friburgo",
+        "Porciuncula",
+        "Quissama",
+        "Rio das Ostras",
+        "Santa Maria Madalena",
+        "Santo Antônio de Padua",
+        "São Fidelis",
+        "São Francisco de Itabapoana",
+        "São João da Barra",
+        "São José de Uba",
+        "São Pedro da Aldeia",
+        "São Sebastião do Alto",
+        "Saquarema",
+        "Silva Jardim",
+        "Sumidouro",
+        "Trajano de Morais",
+        "Varre-Sai",
+      ],
+    };
+  } else if (ddd == 24) {
+    dataOne = {
+      DDD: 24,
+      Estado: "Rio de Janeiro",
+      Municipios: [
+        "Angra dos Reis",
+        "Areal",
+        "Barra do Pirai",
+        "Barra Mansa",
+        "Comendador Levy Gasparian",
+        "Engenheiro Paulo de Frontin",
+        "Itatiaia",
+        "Mendes",
+        "Miguel Pereira",
+        "Paraiba do Sul",
+        "Parati",
+        "Paty do Alferes",
+        "Petrópolis",
+        "Pinheiral",
+        "Pirai",
+        "Porto Real",
+        "Quatis",
+        "Resende",
+        "Rio Claro",
+        "Rio das Flores",
+        "São José do Vale do Rio Preto",
+        "Sapucaia",
+        "Três Rios",
+        "Valenca",
+        "Vassouras",
+        "Volta Redonda",
+      ],
+    };
+  } else if (ddd == 27) {
+    dataOne = {
+      DDD: 27,
+      Estado: "Espírito Santo",
+      Municipios: [
+        "Afonso Claudio",
+        "Água Doce do Norte",
+        "Aguia Branca",
+        "Alfredo Chaves",
+        "Alto Rio Novo",
+        "Aracruz",
+        "Baixo Guandu",
+        "Barra de São Francisco",
+        "Boa Esperança",
+        "Brejetuba",
+        "Cariacica",
+        "Colatina",
+        "Conceição da Barra",
+        "Domingos Martins",
+        "Ecoporanga",
+        "Fundao",
+        "Governador Lindenberg",
+        "Guarapari",
+        "Ibiraçu",
+        "Itaguaçu",
+        "Itarana",
+        "Jaguare",
+        "João Neiva",
+        "Laranja da Terra",
+        "Linhares",
+        "Mantenópolis",
+        "Marechal Floriano",
+        "Marilândia",
+        "Montanha",
+        "Mucurici",
+        "Nova Venecia",
+        "Pancas",
+        "Pedro Canario",
+        "Pinheiros",
+        "Ponto Belo",
+        "Rio Bananal",
+        "Santa Leopoldina",
+        "Santa Maria de Jetiba",
+        "Santa Teresa",
+        "São Domingos do Norte",
+        "São Gabriel da Palha",
+        "São Mateus",
+        "São Roque do Canaã",
+        "Serra",
+        "Sooretama",
+        "Viana",
+        "Vila Pavao",
+        "Vila Valerio",
+        "Vila Velha",
+        "Vitória",
+      ],
+    };
+  } else if (ddd == 28) {
+    dataOne = {
+      DDD: 28,
+      Estado: "Espírito Santo",
+      Municipios: [
+        "Alegre",
+        "Anchieta",
+        "Apiaca",
+        "Atilio Vivacqua",
+        "Bom Jesus do Norte",
+        "Cachoeiro de Itapemirim",
+        "Castelo",
+        "Conceição do Castelo",
+        "Divino de São Lourenço",
+        "Dores do Rio Preto",
+        "Guacui",
+        "Ibatiba",
+        "Ibitirama",
+        "Iconha",
+        "Irupi",
+        "Itapemirim",
+        "Iuna",
+        "Jeronimo Monteiro",
+        "Marataizes",
+        "Mimoso do Sul",
+        "Muniz Freire",
+        "Muqui",
+        "Piuma",
+        "Presidente Kennedy",
+        "Rio Novo do Sul",
+        "São José do Calcado",
+        "Vargem Alta",
+        "Venda Nova do Imigrante",
+      ],
+    };
+  } else if (ddd == 31) {
+    dataOne = {
+      DDD: 31,
+      Estado: "Minas Gerais",
+      Municipios: [
+        "Abre Campo",
+        "Acaiaca",
+        "Alvinópolis",
+        "Alvorada de Minas",
+        "Amparo do Serra",
+        "Antônio Dias",
+        "Aracai",
+        "Araponga",
+        "Baldim",
+        "Barao de Cocais",
+        "Barra Longa",
+        "Bela Vista de Minas",
+        "Belo Horizonte",
+        "Belo Vale",
+        "Betim",
+        "Bom Jesus do Amparo",
+        "Bonfim",
+        "Brumadinho",
+        "Cachoeira da Prata",
+        "Caetanópolis",
+        "Caete",
+        "Cajuri",
+        "Canaã",
+        "Capela Nova",
+        "Capim Branco",
+        "Caputira",
+        "Caranaiba",
+        "Carmesia",
+        "Casa Grande",
+        "Catas Altas",
+        "Catas Altas da Noruega",
+        "Conceição do Mato Dentro",
+        "Confins",
+        "Congonhas",
+        "Congonhas do Norte",
+        "Conselheiro Lafaiete",
+        "Contagem",
+        "Cordisburgo",
+        "Coronel Fabriciano",
+        "Cristiano Otoni",
+        "Crucilândia",
+        "Desterro de Entre Rios",
+        "Diogo de Vasconcelos",
+        "Dionisio",
+        "Dom Joaquim",
+        "Dom Silverio",
+        "Entre Rios de Minas",
+        "Esmeraldas",
+        "Ferros",
+        "Florestal",
+        "Fortuna de Minas",
+        "Funilândia",
+        "Guaraciaba",
+        "Ibirite",
+        "Igarape",
+        "Inhauma",
+        "Ipatinga",
+        "Itabira",
+        "Itabirito",
+        "Itambe do Mato Dentro",
+        "Itatiaiuçu",
+        "Itaverava",
+        "Jaboticatubas",
+        "Jaguaraçu",
+        "Jeceaba",
+        "Jequeri",
+        "Jequitiba",
+        "João Monlevade",
+        "Juatuba",
+        "Lagoa Santa",
+        "Lamim",
+        "Mariana",
+        "Mario Campos",
+        "Marlieria",
+        "Mateus Leme",
+        "Matipo",
+        "Matozinhos",
+        "Moeda",
+        "Morro do Pilar",
+        "Nova Era",
+        "Nova Lima",
+        "Nova União",
+        "Oratorios",
+        "Ouro Branco",
+        "Ouro Preto",
+        "Paraopeba",
+        "Passabem",
+        "Pedra Bonita",
+        "Pedra do Anta",
+        "Pedro Leopoldo",
+        "Piedade de Ponte Nova",
+        "Piedade dos Gerais",
+        "Piranga",
+        "Ponte Nova",
+        "Porto Firme",
+        "Prudente de Morais",
+        "Queluzito",
+        "Raposos",
+        "Ribeirao das Neves",
+        "Rio Acima",
+        "Rio Casca",
+        "Rio Doce",
+        "Rio Espera",
+        "Rio Manso",
+        "Rio Piracicaba",
+        "Sabara",
+        "Santa Barbara",
+        "Santa Cruz do Escalvado",
+        "Santa Luzia",
+        "Santa Margarida",
+        "Santa Maria de Itabira",
+        "Santana de Pirapama",
+        "Santana do Riacho",
+        "Santana dos Montes",
+        "Santo Antônio do Grama",
+        "Santo Antônio do Rio Abaixo",
+        "São Bras do Suacui",
+        "São Domingos do Prata",
+        "São Goncalo do Rio Abaixo",
+        "São Joaquim de Bicas",
+        "São José da Lapa",
+        "São José do Goiabal",
+        "São Miguel do Anta",
+        "São Sebastião do Rio Preto",
+        "Sarzedo",
+        "Sem-Peixe",
+        "Senhora de Oliveira",
+        "Sericita",
+        "Sete Lagoas",
+        "Taquaracu de Minas",
+        "Teixeiras",
+        "Timoteo",
+        "Urucania",
+        "Vespasiano",
+        "Viçosa",
+      ],
+    };
+  } else if (ddd == 32) {
+    dataOne = {
+      DDD: 32,
+      Estado: "Minas Gerais",
+      Municipios: [
         "Alem Paraiba",
         "Alfredo Vasconcelos",
         "Alto Caparao",
@@ -1308,17 +1263,14 @@ return data
         "Uba",
         "Vieiras",
         "Visconde do Rio Branco",
-        "Volta Grande"
-      ]  
-  }
-return data
-} else if (ddd == 35){
-  let data = {
-    "DDD":35,
-    "Estado":"Minas Gerais",
-    "Municipios":
-      [
-
+        "Volta Grande",
+      ],
+    };
+  } else if (ddd == 35) {
+    dataOne = {
+      DDD: 35,
+      Estado: "Minas Gerais",
+      Municipios: [
         "Aguanil",
         "Aiuruoca",
         "Alagoa",
@@ -1477,17 +1429,14 @@ return data
         "Turvolândia",
         "Varginha",
         "Virginia",
-        "Wenceslau Braz"
-        
-      ]  
-  }
-return data
-} else if (ddd == 37){
-  let data = {
-    "DDD":37,
-    "Estado":"Minas Gerais",
-    "Municipios":
-      [
+        "Wenceslau Braz",
+      ],
+    };
+  } else if (ddd == 37) {
+    dataOne = {
+      DDD: 37,
+      Estado: "Minas Gerais",
+      Municipios: [
         "Abaete",
         "Araujos",
         "Arcos",
@@ -1548,18 +1497,14 @@ return data
         "São Sebastião do Oeste",
         "Serra da Saudade",
         "Tapirai",
-        "Vargem Bonita"
-        
-
-      ]  
-  }
-return data
-} else if (ddd == 38){
-  let data = {
-    "DDD":38,
-    "Estado":"Minas Gerais",
-    "Municipios":
-      [ 
+        "Vargem Bonita",
+      ],
+    };
+  } else if (ddd == 38) {
+    dataOne = {
+      DDD: 38,
+      Estado: "Minas Gerais",
+      Municipios: [
         "Aricanduva",
         "Arinos",
         "Augusto de Lima",
@@ -1688,19 +1633,14 @@ return data
         "Varzea da Palma",
         "Varzelândia",
         "Verdelândia",
-        "Veredinha"
-      
-
-      ]  
-  }
-return data
-
-} else if (ddd == 41){
-  let data = {
-    "DDD":41,
-    "Estado":"Paraná",
-    "Municipios":
-      [ 
+        "Veredinha",
+      ],
+    };
+  } else if (ddd == 41) {
+    dataOne = {
+      DDD: 41,
+      Estado: "Paraná",
+      Municipios: [
         "Adrianópolis",
         "Agudos do Sul",
         "Almirante Tamandare",
@@ -1737,18 +1677,13 @@ return data
         "São José dos Pinhais",
         "Tijucas do Sul",
         "Tunas do Parana",
-        
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 42){
-  let data = {
-    "DDD":42,
-    "Estado":"Paraná",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 42) {
+    dataOne = {
+      DDD: 42,
+      Estado: "Paraná",
+      Municipios: [
         "Altamira do Parana",
         "Antônio Olinto",
         "Bituruna",
@@ -1806,19 +1741,13 @@ return data
         "União da Vitória",
         "Ventania",
         "Virmond",
-        
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 43){
-  let data = {
-    "DDD":43,
-    "Estado":"Paraná",
-    "Municipios":
-      [ 
-
+      ],
+    };
+  } else if (ddd == 43) {
+    dataOne = {
+      DDD: 43,
+      Estado: "Paraná",
+      Municipios: [
         "Abatia",
         "Alvorada do Sul",
         "Andira",
@@ -1915,17 +1844,13 @@ return data
         "Tamarana",
         "Tomazina",
         "Urai",
-        
-
-      ]  
-  }
-return data
-} else if (ddd == 44){
-  let data = {
-    "DDD":44,
-    "Estado":"Paraná",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 44) {
+    dataOne = {
+      DDD: 44,
+      Estado: "Paraná",
+      Municipios: [
         "Alto Parana",
         "Alto Piquiri",
         "Altonia",
@@ -2048,19 +1973,14 @@ return data
         "Ubirata",
         "Umuarama",
         "Uniflor",
-        "Vila Alta"
-        
-      
-
-      ]  
-  }
-return data  
-} else if (ddd == 45){
-  let data = {
-    "DDD":45,
-    "Estado":"Paraná",
-    "Municipios":
-      [ 
+        "Vila Alta",
+      ],
+    };
+  } else if (ddd == 45) {
+    dataOne = {
+      DDD: 45,
+      Estado: "Paraná",
+      Municipios: [
         "Anahy",
         "Boa Vista da Aparecida",
         "Braganey",
@@ -2101,20 +2021,14 @@ return data
         "Serranopolis do Iguaçu",
         "Toledo",
         "Três Barras do Parana",
-        "Vera Cruz do Oeste"
-        
-
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 46){
-  let data = {
-    "DDD":46,
-    "Estado":"Paraná",
-    "Municipios":
-      [ 
+        "Vera Cruz do Oeste",
+      ],
+    };
+  } else if (ddd == 46) {
+    dataOne = {
+      DDD: 46,
+      Estado: "Paraná",
+      Municipios: [
         "Ampere",
         "Bela Vista da Caroba",
         "Boa Esperança do Iguaçu",
@@ -2158,18 +2072,13 @@ return data
         "Sulina",
         "Vere",
         "Vitorino",
-        
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 47){
-  let data = {
-    "DDD":47,
-    "Estado":"Santa Catarina",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 47) {
+    dataOne = {
+      DDD: 47,
+      Estado: "Santa Catarina",
+      Municipios: [
         "Agrolândia",
         "Agronomica",
         "Apiuna",
@@ -2248,18 +2157,13 @@ return data
         "Vidal Ramos",
         "Vitor Meireles",
         "Witmarsum",
-        
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 48){
-  let data = {
-    "DDD":48,
-    "Estado":"Santa Catarina",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 48) {
+    dataOne = {
+      DDD: 48,
+      Estado: "Santa Catarina",
+      Municipios: [
         "Águas Mornas",
         "Alfredo Wagner",
         "Angelina",
@@ -2324,17 +2228,14 @@ return data
         "Treze de Maio",
         "Tubarao",
         "Turvo",
-        "Urussanga"
-
-      ]  
-  }
-return data
-} else if (ddd == 49){
-  let data = {
-    "DDD":49,
-    "Estado":"Santa Catarina",
-    "Municipios":
-      [ 
+        "Urussanga",
+      ],
+    };
+  } else if (ddd == 49) {
+    dataOne = {
+      DDD: 49,
+      Estado: "Santa Catarina",
+      Municipios: [
         "Abdon Batista",
         "Abelardo Luz",
         "Água Doce",
@@ -2484,16 +2385,13 @@ return data
         "Xavantina",
         "Xaxim",
         "Zortea",
-        
-      ]  
-  }
-return data
-} else if (ddd == 51){
-  let data = {
-    "DDD":51,
-    "Estado":"Rio Grande do Sul",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 51) {
+    dataOne = {
+      DDD: 51,
+      Estado: "Rio Grande do Sul",
+      Municipios: [
         "Alto Feliz",
         "Alvorada",
         "Amaral Ferrador",
@@ -2635,18 +2533,13 @@ return data
         "Vespasiano Correa",
         "Viamao",
         "Xangri-La",
-        
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 53){
-  let data = {
-    "DDD":53,
-    "Estado":"Rio Grande do Sul",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 53) {
+    dataOne = {
+      DDD: 53,
+      Estado: "Rio Grande do Sul",
+      Municipios: [
         "Acegua",
         "Arroio do Padre",
         "Arroio Grande",
@@ -2672,16 +2565,13 @@ return data
         "São José do Norte",
         "São Lourenço do Sul",
         "Turuçu",
-
-      ]  
-  }
-return data
-} else if (ddd == 54){
-  let data = {
-    "DDD":54,
-    "Estado":"Rio Grande do Sul",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 54) {
+    dataOne = {
+      DDD: 54,
+      Estado: "Rio Grande do Sul",
+      Municipios: [
         "Água Santa",
         "Alto Alegre",
         "Andre da Rocha",
@@ -2819,15 +2709,13 @@ return data
         "Vila Langaro",
         "Vila Maria",
         "Vista Alegre do Prata",
-      ]  
-  }
-return data
-} else if (ddd == 55){
-  let data = {
-    "DDD":55,
-    "Estado":"Rio Grande do Sul",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 55) {
+    dataOne = {
+      DDD: 55,
+      Estado: "Rio Grande do Sul",
+      Municipios: [
         "Agudo",
         "Ajuricaba",
         "Alecrim",
@@ -2966,20 +2854,14 @@ return data
         "Vicente Dutra",
         "Vila Nova do Sul",
         "Vista Alegre",
-        "Vista Gaucha"
-        
-      ]  
-  }
-return data
-
-
-
-} else if (ddd == 61){
-  let data = {
-    "DDD":61,
-    "Estado":"Goiás",
-    "Municipios":
-      [ 
+        "Vista Gaucha",
+      ],
+    };
+  } else if (ddd == 61) {
+    dataOne = {
+      DDD: 61,
+      Estado: "Goiás",
+      Municipios: [
         "Águas Lindas de Goiás",
         "Cabeceiras",
         "Cidade Ocidental",
@@ -2991,17 +2873,14 @@ return data
         "Planaltina",
         "Santo Antônio do Descoberto",
         "Valparaíso de Goiás",
-        "Brasília"
-      ]  
-  }
-return data
-
-} else if (ddd == 62){
-  let data = {
-    "DDD":62,
-    "Estado":"Goiás",
-    "Municipios":
-      [ 
+        "Brasília",
+      ],
+    };
+  } else if (ddd == 62) {
+    dataOne = {
+      DDD: 62,
+      Estado: "Goiás",
+      Municipios: [
         "Abadia de Goiás",
         "Abadiania",
         "Água Fria de Goiás",
@@ -3135,17 +3014,13 @@ return data
         "Vianópolis",
         "Vila Boa",
         "Vila Propício",
-        
-      ]  
-  }
-return data
-
-} else if (ddd == 63){
-  let data = {
-    "DDD":63,
-    "Estado":"Tocantins",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 63) {
+    dataOne = {
+      DDD: 63,
+      Estado: "Tocantins",
+      Municipios: [
         "Abreulândia",
         "Aguiarnópolis",
         "Alianca do Tocantins",
@@ -3282,17 +3157,13 @@ return data
         "Tupiratins",
         "Wanderlândia",
         "Xambioa",
-        
-
-      ]  
-  }
-return data
-} else if (ddd == 64){
-  let data = {
-    "DDD":64,
-    "Estado":"Goiás",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 64) {
+    dataOne = {
+      DDD: 64,
+      Estado: "Goiás",
+      Municipios: [
         "Acreuna",
         "Adelândia",
         "Água Limpa",
@@ -3394,16 +3265,13 @@ return data
         "Turvelândia",
         "Urutai",
         "Vicentinópolis",
-        
-      ]  
-  }
-return data
-} else if (ddd == 65){
-  let data = {
-    "DDD":65,
-    "Estado":"Mato Grosso",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 65) {
+    dataOne = {
+      DDD: 65,
+      Estado: "Mato Grosso",
+      Municipios: [
         "Acorizal",
         "Alto Paraguai",
         "Araputanga",
@@ -3453,16 +3321,13 @@ return data
         "Vale de São Domingos",
         "Varzea Grande",
         "Vila Bela da Santissima Trindade",
-      ]  
-  }
-return data
-
-} else if (ddd == 66){
-  let data = {
-    "DDD":66,
-    "Estado":"Mato Grosso",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 66) {
+    dataOne = {
+      DDD: 66,
+      Estado: "Mato Grosso",
+      Municipios: [
         "Água Boa",
         "Alta Floresta",
         "Alto Araguaia",
@@ -3550,17 +3415,14 @@ return data
         "Torixoreu",
         "União do Sul",
         "Vera",
-        "Vila Rica"
-
-      ]  
-  }
-return data
-} else if (ddd == 67){
-  let data = {
-    "DDD":67,
-    "Estado":"Mato Grosso do Sul",
-    "Municipios":
-      [ 
+        "Vila Rica",
+      ],
+    };
+  } else if (ddd == 67) {
+    dataOne = {
+      DDD: 67,
+      Estado: "Mato Grosso do Sul",
+      Municipios: [
         "Água Clara",
         "Alcinópolis",
         "Amambai",
@@ -3637,17 +3499,14 @@ return data
         "Taquarussu",
         "Terenos",
         "Três Lagoas",
-        "Vicentina"
-      ]  
-  }
-return data
-
-} else if (ddd == 68){
-  let data = {
-    "DDD":68,
-    "Estado":"Acre",
-    "Municipios":
-      [ 
+        "Vicentina",
+      ],
+    };
+  } else if (ddd == 68) {
+    dataOne = {
+      DDD: 68,
+      Estado: "Acre",
+      Municipios: [
         "Acrelândia",
         "Assis Brasil",
         "Brasileia",
@@ -3669,17 +3528,14 @@ return data
         "Sena Madureira",
         "Senador Guiomard",
         "Tarauaca",
-        "Xapuri"
-
-      ]  
-  }
-return data
-} else if (ddd == 69){
-  let data = {
-    "DDD":69,
-    "Estado":"Rondônia",
-    "Municipios":
-      [ 
+        "Xapuri",
+      ],
+    };
+  } else if (ddd == 69) {
+    dataOne = {
+      DDD: 69,
+      Estado: "Rondônia",
+      Municipios: [
         "Alta Floresta D'oeste",
         "Alto Alegre dos Parecis",
         "Alto Paraíso",
@@ -3732,15 +3588,13 @@ return data
         "Vale do Anari",
         "Vale do Paraíso",
         "Vilhena",
-      ]  
-  }
-return data
-} else if (ddd == 71){
-  let data = {
-    "DDD":71,
-    "Estado":"Bahia",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 71) {
+    dataOne = {
+      DDD: 71,
+      Estado: "Bahia",
+      Municipios: [
         "Camacari",
         "Candeias",
         "Catu",
@@ -3754,18 +3608,14 @@ return data
         "São Francisco do Conde",
         "São Sebastião do Passe",
         "Simoes Filho",
-        "Vera Cruz"
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 73){
-  let data = {
-    "DDD":73,
-    "Estado":"Bahia",
-    "Municipios":
-      [ 
+        "Vera Cruz",
+      ],
+    };
+  } else if (ddd == 73) {
+    dataOne = {
+      DDD: 73,
+      Estado: "Bahia",
+      Municipios: [
         "Aiquara",
         "Alcobaca",
         "Almadina",
@@ -3857,18 +3707,13 @@ return data
         "Urucuca",
         "Vereda",
         "Wenceslau Guimarães",
-        
-      
-
-      ]  
-  }
-return data
-} else if (ddd == 74){
-  let data = {
-    "DDD":74,
-    "Estado":"Bahia",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 74) {
+    dataOne = {
+      DDD: 74,
+      Estado: "Bahia",
+      Municipios: [
         "América Dourada",
         "Andorinha",
         "Antônio Goncalves",
@@ -3928,18 +3773,14 @@ return data
         "Varzea da Roca",
         "Varzea do Poco",
         "Varzea Nova",
-        "Xique-Xique"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 75){
-  let data = {
-    "DDD":75,
-    "Estado":"Bahia",
-    "Municipios":
-      [ 
+        "Xique-Xique",
+      ],
+    };
+  } else if (ddd == 75) {
+    dataOne = {
+      DDD: 75,
+      Estado: "Bahia",
+      Municipios: [
         "Abare",
         "Acajutiba",
         "Adustina",
@@ -4084,18 +3925,13 @@ return data
         "Valente",
         "Varzedo",
         "Wagner",
-        
-
-      ]  
-  }
-return data
-
-} else if (ddd == 77){
-  let data = {
-    "DDD":77,
-    "Estado":"Bahia",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 77) {
+    dataOne = {
+      DDD: 77,
+      Estado: "Bahia",
+      Municipios: [
         "Abaira",
         "Anage",
         "Angical",
@@ -4202,17 +4038,14 @@ return data
         "Tremedal",
         "Urandi",
         "Vitória da Conquista",
-        "Wanderley"
-      ]  
-  }
-return data
-
-} else if (ddd == 79){
-  let data = {
-    "DDD":79,
-    "Estado":"Sergipe",
-    "Municipios":
-      [  
+        "Wanderley",
+      ],
+    };
+  } else if (ddd == 79) {
+    dataOne = {
+      DDD: 79,
+      Estado: "Sergipe",
+      Municipios: [
         "Amparo de São Francisco",
         "Aquidaba",
         "Aracaju",
@@ -4286,19 +4119,14 @@ return data
         "Telha",
         "Tobias Barreto",
         "Tomar do Geru",
-        "Umbauba"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 81){
-  let data = {
-    "DDD":81,
-    "Estado":"Pernambuco",
-    "Municipios":
-      [ 
-        
+        "Umbauba",
+      ],
+    };
+  } else if (ddd == 81) {
+    dataOne = {
+      DDD: 81,
+      Estado: "Pernambuco",
+      Municipios: [
         "Abreu E Lima",
         "Agrestina",
         "Água Preta",
@@ -4395,18 +4223,14 @@ return data
         "Vertentes",
         "Vicencia",
         "Vitória de Santo Antao",
-        "Xexeu"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 82){
-  let data = {
-    "DDD":82,
-    "Estado":"Alagoas",
-    "Municipios":
-      [ 
+        "Xexeu",
+      ],
+    };
+  } else if (ddd == 82) {
+    dataOne = {
+      DDD: 82,
+      Estado: "Alagoas",
+      Municipios: [
         "Água Branca",
         "Anadia",
         "Arapiraca",
@@ -4508,17 +4332,14 @@ return data
         "Teotonio Vilela",
         "Traipu",
         "União dos Palmares",
-        "Viçosa"
-      ]  
-  }
-return data
-
-} else if (ddd == 83){
-  let data = {
-    "DDD":83,
-    "Estado":"Paraíba",
-    "Municipios":
-      [ 
+        "Viçosa",
+      ],
+    };
+  } else if (ddd == 83) {
+    dataOne = {
+      DDD: 83,
+      Estado: "Paraíba",
+      Municipios: [
         "Água Branca",
         "Aguiar",
         "Alagoa Grande",
@@ -4740,17 +4561,14 @@ return data
         "Varzea",
         "Vieirópolis",
         "Vista Serrana",
-        "Zabele"
-      ]  
-  }
-return data
-
-} else if (ddd == 84){
-  let data = {
-    "DDD":84,
-    "Estado":"Rio Grande do Norte",
-    "Municipios":
-      [ 
+        "Zabele",
+      ],
+    };
+  } else if (ddd == 84) {
+    dataOne = {
+      DDD: 84,
+      Estado: "Rio Grande do Norte",
+      Municipios: [
         "Acari",
         "Açu",
         "Afonso Bezerra",
@@ -4917,16 +4735,14 @@ return data
         "Venha-Ver",
         "Vera Cruz",
         "Viçosa",
-        "Vila Flor"
-      ]  
-  }
-return data
-} else if (ddd == 85){
-  let data = {
-    "DDD":85,
-    "Estado":"Ceará",
-    "Municipios":
-      [ 
+        "Vila Flor",
+      ],
+    };
+  } else if (ddd == 85) {
+    dataOne = {
+      DDD: 85,
+      Estado: "Ceará",
+      Municipios: [
         "Acarape",
         "Apuiares",
         "Aquiraz",
@@ -4970,18 +4786,13 @@ return data
         "Tururu",
         "Umirim",
         "Uruburetama",
-
-      ]  
-  }
-return data
-
-} else if (ddd == 86){
-  let data = {
-    "DDD":86,
-    "Estado":"Piauí",
-    "Municipios":
-      [ 
-	
+      ],
+    };
+  } else if (ddd == 86) {
+    dataOne = {
+      DDD: 86,
+      Estado: "Piauí",
+      Municipios: [
         "Agricolândia",
         "Água Branca",
         "Alto Longa",
@@ -5064,18 +4875,13 @@ return data
         "Sigefredo Pacheco",
         "Teresina",
         "União",
-
-      ]  
-  }
-return data
-
-} else if (ddd == 87){
-  let data = {
-    "DDD":87,
-    "Estado":"Pernambuco",
-    "Municipios":
-      [ 
-	
+      ],
+    };
+  } else if (ddd == 87) {
+    dataOne = {
+      DDD: 87,
+      Estado: "Pernambuco",
+      Municipios: [
         "Afogados da Ingazeira",
         "Afranio",
         "Águas Belas",
@@ -5162,18 +4968,14 @@ return data
         "Tupanatinga",
         "Tuparetama",
         "Venturosa",
-        "Verdejante"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 88){
-  let data = {
-    "DDD":88,
-    "Estado":"Ceará",
-    "Municipios":
-      [ 
+        "Verdejante",
+      ],
+    };
+  } else if (ddd == 88) {
+    dataOne = {
+      DDD: 88,
+      Estado: "Ceará",
+      Municipios: [
         "Abaiara",
         "Acarau",
         "Acopiara",
@@ -5314,17 +5116,14 @@ return data
         "Uruoca",
         "Varjota",
         "Varzea Alegre",
-        "Viçosa do Ceará"
-      ]  
-  }
-return data
-
-} else if (ddd == 89){
-  let data = {
-    "DDD":89,
-    "Estado":"Piauí",
-    "Municipios":
-      [ 
+        "Viçosa do Ceará",
+      ],
+    };
+  } else if (ddd == 89) {
+    dataOne = {
+      DDD: 89,
+      Estado: "Piauí",
+      Municipios: [
         "Acaua",
         "Alagoinha do Piaui",
         "Alegrete do Piaui",
@@ -5463,20 +5262,15 @@ return data
         "Varzea Grande",
         "Vera Mendes",
         "Vila Nova do Piaui",
-        "Wall Ferraz"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 91){
-  let data = {
-    "DDD":91,
-    "Estado":"Pará",
-    "Municipios":
-      [ 
-	
-       "Abaetetuba",
+        "Wall Ferraz",
+      ],
+    };
+  } else if (ddd == 91) {
+    dataOne = {
+      DDD: 91,
+      Estado: "Pará",
+      Municipios: [
+        "Abaetetuba",
         "Acara",
         "Afua",
         "Anajas",
@@ -5556,18 +5350,14 @@ return data
         "Tracuateua",
         "Ulianópolis",
         "Vigia",
-        "Viseu"
-      ]  
-  }
-return data
-
-} else if (ddd == 92){
-  let data = {
-    "DDD":92,
-    "Estado":"Amazonas",
-    "Municipios":
-      [ 
-	
+        "Viseu",
+      ],
+    };
+  } else if (ddd == 92) {
+    dataOne = {
+      DDD: 92,
+      Estado: "Amazonas",
+      Municipios: [
         "Autazes",
         "Barreirinha",
         "Boa Vista do Ramos",
@@ -5591,18 +5381,14 @@ return data
         "São Sebastião do Uatuma",
         "Silves",
         "Urucara",
-        "Urucurituba"
-      ]  
-  }
-return data
-
-} else if (ddd == 93){
-  let data = {
-    "DDD":93,
-    "Estado":"Pará",
-    "Municipios":
-      [ 
-	
+        "Urucurituba",
+      ],
+    };
+  } else if (ddd == 93) {
+    dataOne = {
+      DDD: 93,
+      Estado: "Pará",
+      Municipios: [
         "Alenquer",
         "Almeirim",
         "Altamira",
@@ -5627,18 +5413,14 @@ return data
         "Terra Santa",
         "Trairao",
         "Uruara",
-        "Vitória do Xingu"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 94){
-  let data = {
-    "DDD":94,
-    "Estado":"Pará",
-    "Municipios":
-      [ 
+        "Vitória do Xingu",
+      ],
+    };
+  } else if (ddd == 94) {
+    dataOne = {
+      DDD: 94,
+      Estado: "Pará",
+      Municipios: [
         "Abel Figueiredo",
         "Água Azul do Norte",
         "Bannach",
@@ -5676,16 +5458,13 @@ return data
         "Tucuma",
         "Tucurui",
         "Xinguara",
-      ]  
-  }
-return data
-
-} else if (ddd == 95){
-  let data = {
-    "DDD":95,
-    "Estado":"Roraima",
-    "Municipios":
-      [ 
+      ],
+    };
+  } else if (ddd == 95) {
+    dataOne = {
+      DDD: 95,
+      Estado: "Roraima",
+      Municipios: [
         "Alto Alegre",
         "Amajari",
         "Boa Vista",
@@ -5700,18 +5479,14 @@ return data
         "Rorainópolis",
         "São João da Baliza",
         "São Luiz",
-        "Uiramuta"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 96){
-  let data = {
-    "DDD":96,
-    "Estado":"Amapá",
-    "Municipios":
-      [ 
+        "Uiramuta",
+      ],
+    };
+  } else if (ddd == 96) {
+    dataOne = {
+      DDD: 96,
+      Estado: "Amapá",
+      Municipios: [
         "Amapa",
         "Calcoene",
         "Cutias",
@@ -5727,19 +5502,14 @@ return data
         "Santana",
         "Serra do Navio",
         "Tartarugalzinho",
-        "Vitória do Jari"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 97){
-  let data = {
-    "DDD":97,
-    "Estado":"Amazonas",
-    "Municipios":
-      [ 
-	
+        "Vitória do Jari",
+      ],
+    };
+  } else if (ddd == 97) {
+    dataOne = {
+      DDD: 97,
+      Estado: "Amazonas",
+      Municipios: [
         "Alvaraes",
         "Amatura",
         "Anama",
@@ -5777,18 +5547,14 @@ return data
         "Tapaua",
         "Tefe",
         "Tonantins",
-        "Uarini"
-
-      ]  
-  }
-return data
-
-} else if (ddd == 98){
-  let data = {
-    "DDD":98,
-    "Estado":"Maranhão",
-    "Municipios":
-      [ 
+        "Uarini",
+      ],
+    };
+  } else if (ddd == 98) {
+    dataOne = {
+      DDD: 98,
+      Estado: "Maranhão",
+      Municipios: [
         "Afonso Cunha",
         "Água Doce do Maranhão",
         "Alcantara",
@@ -5902,16 +5668,14 @@ return data
         "Viana",
         "Vitória do Mearim",
         "Vitorino Freire",
-        "Ze Doca"
-      ]  
-  }
-return data
-} else if (ddd == 99){
-  let data = {
-    "DDD":99,
-    "Estado":"Maranhão",
-    "Municipios":
-      [ 
+        "Ze Doca",
+      ],
+    };
+  } else if (ddd == 99) {
+    dataOne = {
+      DDD: 99,
+      Estado: "Maranhão",
+      Municipios: [
         "Acailândia",
         "Aldeias Altas",
         "Alto Alegre do Maranhão",
@@ -6012,23 +5776,29 @@ return data
         "Timon",
         "Trizidela do Vale",
         "Tuntum",
-        "Vila Nova dos Martirios"
-      ]  
+        "Vila Nova dos Martirios",
+      ],
+    };
+    return;
+  } else {
+    let res = `{"erro": "DDD informado não encontrado na base de dados!"}`;
+    return JSON.parse(res);
   }
-return data
+  
+  let newData;
+  const { data } = await api.get(`https://brasilapi.com.br/api/ddd/v1/${ddd}`);
 
-
-    }else{
-        let res = `{"erro": "DDD informado não encontrado na base de dados!"}`
-        return JSON.parse(res)
-    }
+  if (data.cities.length > dataOne.Municipios.length) {
+    newData = data.cities.map(d => d.toLowerCase())
+  } else {
+    newData = dataOne.Municipios.map(d => d.toLowerCase())
   }
 
+  return {
+    DDD: dataOne.DDD,
+    Estado: dataOne.Estado,
+    Municipios: newData,
+  };
+}
 
-  module.exports = { localizar }
-
-
-
-
-
-
+module.exports = { localizar };
