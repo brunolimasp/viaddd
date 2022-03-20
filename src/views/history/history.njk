@@ -1,0 +1,24 @@
+{% extends "base/base.njk" %}
+
+{% block base %}
+  <br><br>
+  <div class="container">
+    <div id="historia" class="card p-4">
+      <h2 class="text-primary">
+        Discagem direta a distância (DDD)
+      </h2>
+      <br>
+      <br>
+      <p class="lead">
+        A discagem direta a distância (DDD) é o sistema adotado para discagem interurbana automática através da inserção
+        de prefixos regionais e posteriormente de operadoras de longa distância e que se tornou possível graças à
+        automação dos sistemas de telefonia. No Brasil começou a ser implantada em 1969, mas começou a ser implantada em
+        grande escala nas centrais telefônicas brasileiras a partir da década de 70. No início dos anos 90 o sistema
+        estava praticamente instalado em todas as cidades brasileiras.
+      </p>
+    </div>
+    <br>
+    <br>
+    {% include "history/states.njk" %}
+  </div>
+{% endblock %}

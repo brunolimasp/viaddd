@@ -6,15 +6,15 @@ const app = express()
 
 app.use(express.static('./src/public/img'));
 app.use(express.static('./src/public/css'));
-//app.use(express.static('./src/public/js'));
+
 nunjucks.configure('src/views', {
     autoescape: true,
     express:app,
     watch: true
 })
-app.use(router)
+app.set('view engine', 'njk'); 
 
-app.set('view engine', '.html'); 
+app.use(router)
 
 const port = process.env.PORT || 3030
 

@@ -1,16 +1,28 @@
 const express = require('express')
-const ControllerIndex = require ('../controller/Index')
-var router = express.Router();
+const router = express.Router();
 
-router.get('/', ControllerIndex.Index)
-router.get(`/api/ddd/:codigo`, ControllerIndex.ApiDDD)
-router.get('/politica', ControllerIndex.Politica)
-router.get('/sobre', ControllerIndex.Sobre)
-router.get('/historia', ControllerIndex.Historia)
+const homeController = require ('../controllers/homeController.js')
+const politicsController = require ('../controllers/politicsController.js')
+const aboutController = require ('../controllers/aboutController.js')
+const historyController = require ('../controllers/historyController.js')
+
+const stateServiceController = require ('../controllers/historyController')
+const dddCityController = require ('../controllers/historyController')
+
+const dddServiceController = require ('../controllers/dddServiceController')
 
 
-router.get('/:estado', ControllerIndex.EstadosService)
-router.get('/:estados/:ddd', ControllerIndex.DDDCidade)
+router.get('/', homeController.home)
+router.get('/politics', politicsController.politics)
+router.get('/about', aboutController.about)
+router.get('/history', historyController.history)
+
+router.get('/:estado', stateServiceController.history)
+router.get('/:estados/:ddd', dddCityController.history)
+
+
+router.get(`/api/ddd/:codigo`, dddServiceController.dddService)
+
 
 
 module.exports = router
