@@ -1,6 +1,6 @@
 exports.stateService = async (req, res) => {
   let estado = req.params.estado;
-
+ 
   if (estado === "SaoPaulo") {
     res.render("states/Saopaulo");
   } else if (estado === "RioDeJaneiro") {
