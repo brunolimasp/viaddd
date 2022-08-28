@@ -2,9 +2,10 @@
   "name": "viaddd",
   "version": "1.0.0",
   "description": "Api para localização de DDD",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "npm install -g npm && npm cache verify && npm cache clean --force && npm cache verify && node -v && npm -v && nodemon app.js",
+    "start": "nodemon app.js",
+    "dev": "npm install -g npm && npm cache verify && npm cache clean --force && npm cache verify && node -v && npm -v && nodemon app.js",
     "git": "git stage . && git commit -a -m update && git push"
   },
   "repository": {
